@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
     public GameObject TriggerText;
     public GameObject DialogueObject;
 
+
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
@@ -17,9 +18,9 @@ public class NPC : MonoBehaviour
             {
                 DialogueObject.SetActive(true);
                 other.gameObject.GetComponent <PlayerData>().DialogueNumber = 1;
-                DialogueObject.GetComponent<DialogueObject>().Next();
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+
 
             }
         }

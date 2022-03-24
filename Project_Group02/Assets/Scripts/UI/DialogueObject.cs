@@ -53,7 +53,7 @@ public class DialogueObject : MonoBehaviour
             Cursor.visible = false;
             data.DialogueNumber = 0;
             currentDialogueNum = 0;
-            data.QuestNumber = -currentDialogue.QuestNumber;
+            data.QuestNumber = currentDialogue.QuestNumber;
             currentDialogue = null;
 
             this.gameObject.SetActive(false);
