@@ -7,4 +7,5 @@ public class PlayerData : MonoBehaviour
     public int QuestNumber;
 
     public int DialogueNumber;
+
 }
