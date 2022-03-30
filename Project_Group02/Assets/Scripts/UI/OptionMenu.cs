@@ -9,15 +9,18 @@ public class OptionMenu : MonoBehaviour
     public GameObject SettingPanel;
     public GameObject PlayerOBJ;
 
+    Player sc;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        sc = PlayerOBJ.GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 
 
@@ -30,8 +33,8 @@ public class OptionMenu : MonoBehaviour
     {
         SettingPanel.SetActive(true);
         this.gameObject.SetActive(false);
-        PlayerOBJ.GetComponent<Player>().SetIsOption(true);
-        PlayerOBJ.GetComponent<Player>().SetIsSetting(true);
+        sc.SetIsOption(true);
+        sc.SetIsSetting(true);
     }
 
 
