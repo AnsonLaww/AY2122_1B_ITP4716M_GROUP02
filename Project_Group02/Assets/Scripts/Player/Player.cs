@@ -71,5 +71,11 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(CurrentHealth);
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+            if (other.tag == "Monster")
+            {
+                TakeDamage(5);
+            }
+    }
 }
