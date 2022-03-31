@@ -7,15 +7,25 @@ public class Player : MonoBehaviour
 
     public int MaxHealth = 100;
     public int CurrentHealth;
+    public int MaxMana = 100;
+    public int CurrentMana;
+    public int MaxSouls = 5;
+    public int CurrentSouls;
+    public int AttackStats;
+
 
     public HealthBar healthBar;
 
     public GameObject OptionPanel;
     public GameObject SettingPanel;
+    public GameObject StatsPanel;
+
+    public PlayerData data;
+
 
     bool isOption = false;
     bool isSetting = false;
-
+    bool isStat = false;
 
     public void SetIsSetting(bool isSetting)
     {
@@ -31,18 +41,23 @@ public class Player : MonoBehaviour
     void Start()
     {
         CurrentHealth = MaxHealth;
+        CurrentMana = MaxMana;
+        CurrentSouls = 0;
+        AttackStats = 10;
         healthBar.SetMaxHealth(MaxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
+        data.UpdateStats();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(5);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && isOption == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && isOption == false && isStat == false)
         {
             OptionPanel.SetActive(true);
             isOption = true;
@@ -62,6 +77,20 @@ public class Player : MonoBehaviour
             isSetting = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.Tab) && isStat == false && isOption == false)
+        {
+            StatsPanel.SetActive(true);
+            isStat = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Tab) && isStat == true)
+        {
+            StatsPanel.SetActive(false);
+            isOption = false;
+            isSetting = false;
+            isStat = false;
+        }
     }
 
     void TakeDamage(int damage)
@@ -69,6 +98,11 @@ public class Player : MonoBehaviour
         CurrentHealth -= damage;
 
         healthBar.SetHealth(CurrentHealth);
+
+        if(CurrentHealth <= 0)
+        {
+            CurrentHealth = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
