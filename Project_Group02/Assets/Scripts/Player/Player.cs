@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -102,7 +103,14 @@ public class Player : MonoBehaviour
         if(CurrentHealth <= 0)
         {
             CurrentHealth = 0;
+            LoadScene();
         }
+    }
+
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("GameOverScene");
     }
 
     private void OnTriggerEnter(Collider other)
