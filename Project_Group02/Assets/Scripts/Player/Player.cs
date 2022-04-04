@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     bool isSetting = false;
     bool isStat = false;
 
+
     public void SetIsSetting(bool isSetting)
     {
         this.isSetting = isSetting;
@@ -46,6 +47,9 @@ public class Player : MonoBehaviour
         CurrentSouls = 0;
         AttackStats = 10;
         healthBar.SetMaxHealth(MaxHealth);
+
+
+
     }
 
     // Update is called once per frame
@@ -92,6 +96,9 @@ public class Player : MonoBehaviour
             isSetting = false;
             isStat = false;
         }
+
+    
+
     }
 
     void TakeDamage(int damage)
