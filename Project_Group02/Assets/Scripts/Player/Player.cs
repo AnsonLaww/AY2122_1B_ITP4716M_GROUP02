@@ -6,16 +6,10 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
-    public int MaxHealth = 100;
-    public int CurrentHealth;
-    public int MaxMana = 100;
-    public int CurrentMana;
-    public int MaxSouls = 5;
-    public int CurrentSouls;
-    public int AttackStats;
 
+    public HealthBar HealthBar;
+    public ManaBar ManaBar;
 
-    public HealthBar healthBar;
 
     public GameObject OptionPanel;
     public GameObject SettingPanel;
@@ -42,14 +36,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentHealth = MaxHealth;
-        CurrentMana = MaxMana;
-        CurrentSouls = 0;
-        AttackStats = 10;
-        healthBar.SetMaxHealth(MaxHealth);
-
-
-
+        
+        HealthBar.SetMaxHealth(data.MaxHealth);
+        ManaBar.SetMaxMana(data.MaxMana);
     }
 
     // Update is called once per frame
@@ -60,6 +49,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(5);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            UseMana(5);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isOption == false && isStat == false)
@@ -97,21 +91,47 @@ public class Player : MonoBehaviour
             isStat = false;
         }
 
-    
+        if(data.CurrentExp >= data.MaxExp)
+        {
+            LevelUp();
+        }
 
+    }
+
+    public void SetExp()
+    {
+        data.CurrentExp += 1;
+    }
+
+     void LevelUp()
+    {
+        data.MaxExp += 1;
+        data.CurrentExp = 0;
+        data.MaxHealth += 5;
+        data.MaxMana += 5;
+        data.CurrentHealth = data.MaxHealth;
+        data.CurrentMana = data.MaxMana;
+        data.Level += 1;
+        data.AttackStats += 5;
     }
 
     void TakeDamage(int damage)
     {
-        CurrentHealth -= damage;
+        data.CurrentHealth -= damage;
 
-        healthBar.SetHealth(CurrentHealth);
+        HealthBar.SetHealth(data.CurrentHealth);
 
-        if(CurrentHealth <= 0)
+        if(data.CurrentHealth <= 0)
         {
-            CurrentHealth = 0;
+            data.CurrentHealth = 0;
             LoadScene();
         }
+    }
+
+    void UseMana(int mana)
+    {
+        data.CurrentMana -= mana;
+        ManaBar.SetMana(data.CurrentMana);
     }
 
 

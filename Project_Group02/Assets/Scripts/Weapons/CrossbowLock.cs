@@ -9,6 +9,7 @@ public class CrossbowLock : MonoBehaviour
     bool isLocked = false;
     float range = 1000f;
     public Camera CrossbowCamara;
+    public Player PlayerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +51,11 @@ public class CrossbowLock : MonoBehaviour
             Debug.Log(hit.transform.name);
             Debug.DrawLine(Camera.main.transform.position, hit.transform.position, Color.red, 0.5f, true);
             Destroy(hit.transform.gameObject);
+            PlayerScript.SetExp();
 
         }
+
+        
 
 
     }

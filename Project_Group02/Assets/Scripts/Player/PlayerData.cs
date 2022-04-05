@@ -9,14 +9,16 @@ public class PlayerData : MonoBehaviour
 
     public int DialogueNumber;
 
-    public float MaxHealth;
-    public float CurrentHealth;
-    public float MaxMana;
-    public float CurrentMana;
-    public float AttackStats;
-    public float MaxSouls;
-    public float CurrentSouls;
-
+    public int MaxHealth = 100;
+    public int CurrentHealth;
+    public int MaxMana = 100;
+    public int CurrentMana;
+    public int MaxSouls = 5;
+    public int CurrentSouls;
+    public int AttackStats = 5;
+    public int Level = 1;
+    public int CurrentExp = 0;
+    public int MaxExp = 10;
 
 
     [Header("StatsText")]
@@ -24,21 +26,35 @@ public class PlayerData : MonoBehaviour
     public TextMeshProUGUI ManaText;
     public TextMeshProUGUI AttackText;
     public TextMeshProUGUI SoulsText;
+    public TextMeshProUGUI LevelText;
+    public TextMeshProUGUI ExpText;
 
 
     public Player PlayerScript;
 
     private void Start()
     {
+        MaxHealth = 100;
+        MaxMana = 100;
+        CurrentExp = 0;
+        CurrentHealth = 100;
+        CurrentMana = 100;
+        CurrentSouls = 0;
+        MaxExp = 10;
+        MaxSouls = 5;
+        Level = 1;
+        AttackStats = 5;
         PlayerScript = GetComponent<Player>();
     }
 
     public void UpdateStats()
     {
-        HealthText.text = "Health : " + PlayerScript.CurrentHealth + " / " + PlayerScript.MaxHealth.ToString("F0");
-        ManaText.text = "Mana : " + PlayerScript.CurrentMana + " / " + PlayerScript.MaxMana.ToString("F0");
-        AttackText.text = "Attack : " + PlayerScript.AttackStats.ToString("F0");
-        SoulsText.text = "Souls : " + PlayerScript.CurrentSouls + " / " + PlayerScript.MaxSouls.ToString("F0");
+        LevelText.text = "Lv : " + Level;
+        HealthText.text = "Health : " + CurrentHealth + " / " + MaxHealth.ToString("F0");
+        ManaText.text = "Mana : " + CurrentMana + " / " + MaxMana.ToString("F0");
+        AttackText.text = "Attack : " + AttackStats.ToString("F0");
+        SoulsText.text = "Souls : " + CurrentSouls + " / " + MaxSouls.ToString("F0");
+        ExpText.text = "Exp : " + CurrentExp + " / " + MaxExp.ToString("F0");
 
     }
 
