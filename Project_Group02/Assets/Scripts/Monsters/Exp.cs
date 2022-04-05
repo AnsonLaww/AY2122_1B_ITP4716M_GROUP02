@@ -51,5 +51,7 @@ public class Exp : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
     }
 }

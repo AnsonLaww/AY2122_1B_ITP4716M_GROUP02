@@ -98,6 +98,7 @@ public class Player : MonoBehaviour
 
     }
 
+
     public void SetExp()
     {
         data.CurrentExp += 1;
@@ -142,9 +143,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-            if (other.tag == "Monster")
-            {
-                TakeDamage(5);
-            }
+        if (other.tag == "Monster")
+        {
+            TakeDamage(5);
+        }
+        if (other.CompareTag("Exp"))
+        {
+            SetExp();
+        }
     }
 }

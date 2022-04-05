@@ -41,14 +41,6 @@ public class Mummy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            Instantiate(Exp, transform.position, Quaternion.identity);
 
-            Destroy(this.gameObject);
-        }
-    }
 }
 
