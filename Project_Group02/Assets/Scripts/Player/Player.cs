@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public GameObject OptionPanel;
     public GameObject SettingPanel;
     public GameObject StatsPanel;
+    public GameObject Crossbow;
+    public GameObject Ak47;
 
     public PlayerData data;
 
@@ -21,6 +23,8 @@ public class Player : MonoBehaviour
     bool isOption = false;
     bool isSetting = false;
     bool isStat = false;
+    bool isCrossbow = false;
+    bool isAk47 = false;
 
 
     public void SetIsSetting(bool isSetting)
@@ -83,7 +87,7 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        else if(Input.GetKeyDown(KeyCode.Tab) && isStat == true)
+        else if (Input.GetKeyDown(KeyCode.Tab) && isStat == true)
         {
             StatsPanel.SetActive(false);
             isOption = false;
@@ -91,13 +95,35 @@ public class Player : MonoBehaviour
             isStat = false;
         }
 
-        if(data.CurrentExp >= data.MaxExp)
+        if (data.CurrentExp >= data.MaxExp)
         {
             LevelUp();
         }
 
-    }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Crossbow.SetActive(true);
+            Ak47.SetActive(false);
+            isCrossbow = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1) && isCrossbow == true)
+        {
+            Crossbow.SetActive(false);
+            isCrossbow = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Ak47.SetActive(true);
+            Crossbow.SetActive(false);
+            isAk47 = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && isAk47 == true)
+        {
+            Ak47.SetActive(false);
+            isAk47 = false;
+        }
 
+    }
 
     public void SetExp()
     {
