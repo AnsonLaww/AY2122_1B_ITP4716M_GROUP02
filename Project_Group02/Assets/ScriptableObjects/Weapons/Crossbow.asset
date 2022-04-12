@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36672402a87adb44c8c3d90e0b714929, type: 3}
+  m_Script: {fileID: 11500000, guid: e96551da751775348b7b8c5b12a7b73b, type: 3}
   m_Name: Crossbow
   m_EditorClassIdentifier: 
   name: Crossbow
-  description: Can shoot arrow
-  damage: 5
+  description: Can shoot the arrows
+  attack: 5
   upgradeCost: 10
-  weaponSprite: {fileID: 919132149155446097, guid: 609582b78b6c5204f985747eb8e06bf7, type: 3}

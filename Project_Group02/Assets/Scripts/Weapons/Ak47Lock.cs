@@ -10,6 +10,8 @@ public class Ak47Lock : MonoBehaviour
     public Camera Ak47Camara;
     public Player PlayerScript;
     public GameObject ExpPrefab;
+    public EnemiesDataScriptableObject[] Enemies;
+    public WeaponsDataScriptableObjects Weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -47,8 +49,16 @@ public class Ak47Lock : MonoBehaviour
 
         if (Physics.Raycast(Ak47Camara.transform.position, Ak47Camara.transform.forward, out hit, range) && hit.collider.tag == "Monster")
         {
-            Destroy(hit.transform.gameObject);
-            Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
+            foreach (EnemiesDataScriptableObject enemy in Enemies)
+            {
+                enemy.Health -= Weapon.attack;
+                Debug.Log(enemy.Health);
+                if (enemy.Health <= 0)
+                {
+                    Destroy(hit.transform.gameObject);
+                    Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
+                }
+            }
         }
     }
 }

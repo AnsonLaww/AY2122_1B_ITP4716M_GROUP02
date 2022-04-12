@@ -23,6 +23,11 @@ public class PlayerData : MonoBehaviour
     public int MaxExp = 10;
 
 
+    public WeaponsDataScriptableObjects[] weapons;
+
+    public int CurrentWeapons;
+
+
     [Header("StatsText")]
     public TextMeshProUGUI HealthText;
     public TextMeshProUGUI ManaText;
@@ -46,6 +51,7 @@ public class PlayerData : MonoBehaviour
         MaxSouls = 5;
         Level = 1;
         AttackStats = 10;
+        CurrentWeapons = 0;
   
 
         PlayerScript = GetComponent<Player>();
@@ -57,6 +63,15 @@ public class PlayerData : MonoBehaviour
         LevelText.text = "Lv : " + Level;
         HealthText.text = "Health : " + CurrentHealth + " / " + MaxHealth.ToString("F0");
         ManaText.text = "Mana : " + CurrentMana + " / " + MaxMana.ToString("F0");
+
+        for(int i = 0; i < weapons.Length; i++)
+        {
+            if(i == CurrentWeapons)
+            {
+               AttackStats =  weapons[i].attack;
+            }
+        }
+
 
         AttackText.text = "Attack : " + AttackStats.ToString("F0");
 

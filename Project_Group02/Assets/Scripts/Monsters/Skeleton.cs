@@ -7,12 +7,16 @@ public class Skeleton : MonoBehaviour
 {
     NavMeshAgent nma;
     Transform Player;
+
+
     void Start()
     {
         nma = GetComponent<NavMeshAgent>();
         Player = GameObject.FindWithTag("Player").transform;
 
         nma.stoppingDistance = 2f;
+
+
     }
 
     void Update()

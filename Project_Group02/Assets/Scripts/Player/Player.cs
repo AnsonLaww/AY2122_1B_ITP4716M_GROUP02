@@ -96,6 +96,7 @@ public class Player : MonoBehaviour
             Crossbow.SetActive(true);
             Ak47.SetActive(false);
             isCrossbow = true;
+            data.CurrentWeapons = 0;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1) && isCrossbow == true)
         {
@@ -107,6 +108,7 @@ public class Player : MonoBehaviour
             Ak47.SetActive(true);
             Crossbow.SetActive(false);
             isAk47 = true;
+            data.CurrentWeapons = 1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && isAk47 == true)
         {

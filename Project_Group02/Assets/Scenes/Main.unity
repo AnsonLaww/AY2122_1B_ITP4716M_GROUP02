@@ -2319,6 +2319,10 @@ MonoBehaviour:
   Ak47Camara: {fileID: 1165689153}
   PlayerScript: {fileID: 1136461863}
   ExpPrefab: {fileID: 8745441603983185066, guid: 0479ec59b33280b488dca0d48b2223ea, type: 3}
+  Enemies:
+  - {fileID: 11400000, guid: dfc1f4c0eaf17054c8d0bbd64887cc4b, type: 2}
+  - {fileID: 11400000, guid: e83af1559cdf0d543beef2000c9b6b08, type: 2}
+  Weapon: {fileID: 11400000, guid: 549b1d1ca80fbe140815986d96735db2, type: 2}
 --- !u!95 &472789126
 Animator:
   serializedVersion: 3
@@ -6251,9 +6255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17c5e4c9c31a47479d9bdfb7d701d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 11400000, guid: 93e478d4ed37300438beb8daa7556b43, type: 2}
-  - {fileID: 11400000, guid: 549b1d1ca80fbe140815986d96735db2, type: 2}
   QuestNumber: 0
   DialogueNumber: 1
   MaxHealth: 100
@@ -6266,6 +6267,10 @@ MonoBehaviour:
   Level: 0
   CurrentExp: 0
   MaxExp: 2
+  weapons:
+  - {fileID: 11400000, guid: 93e478d4ed37300438beb8daa7556b43, type: 2}
+  - {fileID: 11400000, guid: 549b1d1ca80fbe140815986d96735db2, type: 2}
+  CurrentWeapons: 0
   HealthText: {fileID: 854203191}
   ManaText: {fileID: 1422112627}
   AttackText: {fileID: 1647812626}
@@ -10640,6 +10645,10 @@ MonoBehaviour:
   CrossbowCamara: {fileID: 581167976}
   PlayerScript: {fileID: 1136461863}
   ExpPrefab: {fileID: 8745441603983185066, guid: 0479ec59b33280b488dca0d48b2223ea, type: 3}
+  Enemies:
+  - {fileID: 11400000, guid: dfc1f4c0eaf17054c8d0bbd64887cc4b, type: 2}
+  - {fileID: 11400000, guid: e83af1559cdf0d543beef2000c9b6b08, type: 2}
+  Weapon: {fileID: 11400000, guid: 93e478d4ed37300438beb8daa7556b43, type: 2}
 --- !u!1001 &2143062808
 PrefabInstance:
   m_ObjectHideFlags: 0

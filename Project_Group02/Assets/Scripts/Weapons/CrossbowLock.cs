@@ -11,6 +11,9 @@ public class CrossbowLock : MonoBehaviour
     public Camera CrossbowCamara;
     public Player PlayerScript;
     public GameObject ExpPrefab;
+    public EnemiesDataScriptableObject[] Enemies;
+    public WeaponsDataScriptableObjects Weapon;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,8 +54,18 @@ public class CrossbowLock : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
             Debug.DrawLine(Camera.main.transform.position, hit.transform.position, Color.red, 0.5f, true);
-            Destroy(hit.transform.gameObject);
-            Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
+
+            foreach(EnemiesDataScriptableObject enemy in Enemies)
+            {
+                enemy.Health -= Weapon.attack;
+                Debug.Log(enemy.Health);
+                if (enemy.Health <= 0)
+                {
+                    Destroy(hit.transform.gameObject);
+                    Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
+                }
+            }
+
 
         }
     }

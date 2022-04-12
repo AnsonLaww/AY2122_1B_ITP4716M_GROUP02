@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96551da751775348b7b8c5b12a7b73b, type: 3}
-  m_Name: AK47
+  m_Script: {fileID: 11500000, guid: 0cf995409fc45b94d9f09b217a284dab, type: 3}
+  m_Name: Skeleton
   m_EditorClassIdentifier: 
-  name: AK47
-  description: Can shoot the bullets
-  attack: 10
-  upgradeCost: 20
+  Name: Skeleton
+  Descriptions: 
+  Health: 80
+  AttackDamage: 10
+  Defend: 10
+  Experience: 1
