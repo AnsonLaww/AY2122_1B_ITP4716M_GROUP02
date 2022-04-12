@@ -5,6 +5,8 @@ using TMPro;
 
 public class PlayerData : MonoBehaviour
 {
+
+
     public int QuestNumber;
 
     public int DialogueNumber;
@@ -15,7 +17,7 @@ public class PlayerData : MonoBehaviour
     public int CurrentMana;
     public int MaxSouls = 5;
     public int CurrentSouls;
-    public int AttackStats = 5;
+    public int AttackStats = 0;
     public int Level = 1;
     public int CurrentExp = 0;
     public int MaxExp = 10;
@@ -43,16 +45,21 @@ public class PlayerData : MonoBehaviour
         MaxExp = 10;
         MaxSouls = 5;
         Level = 1;
-        AttackStats = 5;
+        AttackStats = 10;
+  
+
         PlayerScript = GetComponent<Player>();
     }
+
 
     public void UpdateStats()
     {
         LevelText.text = "Lv : " + Level;
         HealthText.text = "Health : " + CurrentHealth + " / " + MaxHealth.ToString("F0");
         ManaText.text = "Mana : " + CurrentMana + " / " + MaxMana.ToString("F0");
+
         AttackText.text = "Attack : " + AttackStats.ToString("F0");
+
         SoulsText.text = "Souls : " + CurrentSouls + " / " + MaxSouls.ToString("F0");
         ExpText.text = "Exp : " + CurrentExp + " / " + MaxExp.ToString("F0");
 

@@ -50,15 +50,6 @@ public class Player : MonoBehaviour
     {
         data.UpdateStats();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(5);
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            UseMana(5);
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isOption == false && isStat == false)
         {
