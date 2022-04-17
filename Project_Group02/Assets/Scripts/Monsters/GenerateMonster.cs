@@ -9,11 +9,9 @@ public class GenerateMonster : MonoBehaviour
     public int zPos;
     public int monsterCount = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+
+
 
     // Update is called once per frame
     IEnumerator MonsterDrop()
@@ -22,7 +20,6 @@ public class GenerateMonster : MonoBehaviour
         {
             xPos = Random.Range(10, 120);
             zPos = Random.Range(60, 190);
-
 
             yield return new WaitForSeconds(0.1f);
 

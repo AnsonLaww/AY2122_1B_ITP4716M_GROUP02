@@ -12,4 +12,7 @@ public class EnemiesDataScriptableObject : ScriptableObject
     public int Defend;
     public int Experience;
 
+
+
+
 }
