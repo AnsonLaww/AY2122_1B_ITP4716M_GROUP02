@@ -11,8 +11,7 @@ public class CrossbowLock : MonoBehaviour
     public Camera CrossbowCamara;
     public Player PlayerScript;
     public GameObject ExpPrefab;
-
-
+    public WeaponsDataScriptableObjects Weapon;
 
 
     // Start is called before the first frame update
@@ -52,10 +51,15 @@ public class CrossbowLock : MonoBehaviour
 
         if (Physics.Raycast(CrossbowCamara.transform.position, CrossbowCamara.transform.forward, out hit, range) && hit.collider.tag == "Monster")
         {
-            Debug.Log(hit.transform.name);
-            Debug.DrawLine(Camera.main.transform.position, hit.transform.position, Color.red, 0.5f, true);
-            Destroy(hit.transform.gameObject);
-            Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
+
+            hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
+
+            if(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
+            {
+                Destroy(hit.transform.gameObject);
+                Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
+            }
+
         }
 
 

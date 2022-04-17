@@ -10,14 +10,12 @@ public class Ak47Lock : MonoBehaviour
     public Camera Ak47Camara;
     public Player PlayerScript;
     public GameObject ExpPrefab;
-    EnemiesData enemy;
     public WeaponsDataScriptableObjects Weapon;
 
     // Start is called before the first frame update
     void Start()
     {
         Ak47Anim = GetComponent<Animator>();
-        enemy = new EnemiesData();
     }
 
     // Update is called once per frame
@@ -50,10 +48,10 @@ public class Ak47Lock : MonoBehaviour
 
         if (Physics.Raycast(Ak47Camara.transform.position, Ak47Camara.transform.forward, out hit, range) && hit.collider.tag == "Monster")
         {
-            enemy.SetHealth(enemy.GetHealth() - Weapon.attack);
 
-            Debug.Log(enemy.GetHealth());
-            if (enemy.GetHealth() <= 0)
+            hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
+
+            if (hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {
                 Destroy(hit.transform.gameObject);
                 Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
