@@ -170,5 +170,9 @@ public class Player : MonoBehaviour
         {
             SetExp();
         }
+        if (other.tag == "Finish")
+        {
+            SceneManager.LoadScene("BossScene");
+        }
     }
 }
