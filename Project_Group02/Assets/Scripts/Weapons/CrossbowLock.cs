@@ -53,7 +53,6 @@ public class CrossbowLock : MonoBehaviour
         {
 
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
-
             if(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {
                 Destroy(hit.transform.gameObject);
