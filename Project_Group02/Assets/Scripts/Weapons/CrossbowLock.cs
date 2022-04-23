@@ -42,6 +42,9 @@ public class CrossbowLock : MonoBehaviour
             crossbowAnim.SetBool("isLocked", false);
             isLocked = false;
         }
+
+
+
     }
 
     void Shoot()

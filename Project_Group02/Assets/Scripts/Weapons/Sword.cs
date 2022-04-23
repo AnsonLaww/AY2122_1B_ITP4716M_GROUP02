@@ -29,6 +29,8 @@ public class Sword : MonoBehaviour
             swordAnim.SetBool("isAttacked", false);
             isAttacked = false;
         }
+
+
     }
 
 

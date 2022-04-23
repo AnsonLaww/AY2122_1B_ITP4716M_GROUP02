@@ -40,6 +40,9 @@ public class Ak47Lock : MonoBehaviour
             Ak47Anim.SetBool("isLocked", false);
             isLocked = false;
         }
+
+
+
     }
 
     void Shoot()
