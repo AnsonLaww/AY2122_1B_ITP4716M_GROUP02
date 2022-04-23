@@ -12,7 +12,10 @@ public class BossMovement : MonoBehaviour
     bool isWalking, isAttacking;
     public NavMeshAgent agent;
     public float updateTime = 0;
-
+    bool getHurtStats = false;
+    public GameObject Instantiate_Position;
+    public GameObject Box;
+    int ballCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,19 @@ public class BossMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         isWalking = false;
         isAttacking = false;
+
     }
+
+    public bool GetHurt()
+    {
+        return getHurtStats;
+    }
+
+    public void SetHurtStats(bool getHurtStats)
+    {
+        this.getHurtStats = getHurtStats;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -32,6 +47,8 @@ public class BossMovement : MonoBehaviour
         anim.SetBool("isWalking", true);
         float dist = Vector3.Distance(this.transform.position, player.transform.position);
 
+        
+
         for(int i = 0; i < 200; i++)
         {
             if (i == randomTimer)
@@ -40,6 +57,8 @@ public class BossMovement : MonoBehaviour
                 anim.SetBool("isWalking", false);
                 isAttacking = true;
                 isWalking = false;
+   
+
                 randomTimer = 0;
             }
             else
@@ -50,7 +69,28 @@ public class BossMovement : MonoBehaviour
                 isWalking = true;
             }
         }
+
+        while (isAttacking && ballCount !=3)
+        {
+             SpawnLightingBall();
+             ballCount++;
+        }
+
+        ballCount = 0;
+
+        if(getHurtStats == true)
+        {
+
+            anim.SetTrigger("idle");
+        }
       
+    }
+
+    void SpawnLightingBall()
+    {
+           GameObject instantiateObject = Instantiate(Box, Instantiate_Position.transform.position, Instantiate_Position.transform.rotation);
+           instantiateObject.transform.position = new Vector3(-30f, instantiateObject.transform.position.y, instantiateObject.transform.position.z);
+
     }
 
 

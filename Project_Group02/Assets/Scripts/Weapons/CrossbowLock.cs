@@ -12,21 +12,28 @@ public class CrossbowLock : MonoBehaviour
     public Player PlayerScript;
     public GameObject ExpPrefab;
     public WeaponsDataScriptableObjects Weapon;
+    bool lockAttack = false;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         crossbowAnim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && lockAttack == false)
         {
             Shoot();
+            lockAttack = true;
+            Debug.Log("Right Click");
+            StartCoroutine(LockAttack());
         }
 
 
@@ -47,6 +54,13 @@ public class CrossbowLock : MonoBehaviour
 
     }
 
+    IEnumerator LockAttack()
+    {
+        yield return new WaitForSeconds(3);
+        lockAttack = false;
+        yield return new WaitForSecondsRealtime(3);
+    }
+
     void Shoot()
     {
 
@@ -56,7 +70,10 @@ public class CrossbowLock : MonoBehaviour
         {
 
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
-            if(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
+            hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
+            hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
+
+            if (hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {
                 Destroy(hit.transform.gameObject);
                 Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
