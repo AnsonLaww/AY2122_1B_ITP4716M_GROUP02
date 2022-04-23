@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public GameObject StatsPanel;
     public GameObject Crossbow;
     public GameObject Ak47;
+    public GameObject Sword;
 
     public PlayerData data;
 
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     bool isStat = false;
     bool isCrossbow = false;
     bool isAk47 = false;
+    bool isSword = false;
 
 
     public void SetIsSetting(bool isSetting)
@@ -95,6 +97,7 @@ public class Player : MonoBehaviour
         {
             Crossbow.SetActive(true);
             Ak47.SetActive(false);
+            Sword.SetActive(false);
             isCrossbow = true;
             data.CurrentWeapons = 0;
         }
@@ -107,6 +110,7 @@ public class Player : MonoBehaviour
         {
             Ak47.SetActive(true);
             Crossbow.SetActive(false);
+            Sword.SetActive(false);
             isAk47 = true;
             data.CurrentWeapons = 1;
         }
@@ -115,6 +119,20 @@ public class Player : MonoBehaviour
             Ak47.SetActive(false);
             isAk47 = false;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Crossbow.SetActive(false);
+            Ak47.SetActive(false);
+            Sword.SetActive(true);
+            isSword = true;
+            data.CurrentWeapons = 2;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && isSword == true)
+        {
+            Sword.SetActive(false);
+            isSword = false;
+        }
+
 
     }
 
