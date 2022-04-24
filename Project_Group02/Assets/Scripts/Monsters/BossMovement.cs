@@ -44,7 +44,6 @@ public class BossMovement : MonoBehaviour
     {
         int randomTimer = Random.Range(0, 200);
         updateTime += Time.deltaTime;
-        anim.SetBool("isWalking", true);
         float dist = Vector3.Distance(this.transform.position, player.transform.position);
 
         
@@ -72,7 +71,8 @@ public class BossMovement : MonoBehaviour
 
         while (isAttacking && ballCount !=3)
         {
-             SpawnLightingBall();
+            StartCoroutine(WaitForSpawn());
+             agent.destination = this.transform.position;
              ballCount++;
         }
 
@@ -89,8 +89,13 @@ public class BossMovement : MonoBehaviour
     void SpawnLightingBall()
     {
            GameObject instantiateObject = Instantiate(Box, Instantiate_Position.transform.position, Instantiate_Position.transform.rotation);
-           instantiateObject.transform.position = new Vector3(-30f, instantiateObject.transform.position.y, instantiateObject.transform.position.z);
 
+    }
+
+    IEnumerator WaitForSpawn()
+    {
+        yield return new WaitForSeconds(2);
+        SpawnLightingBall();
     }
 
 

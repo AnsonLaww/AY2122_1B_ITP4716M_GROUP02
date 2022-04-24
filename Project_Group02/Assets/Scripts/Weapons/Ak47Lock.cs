@@ -18,6 +18,7 @@ public class Ak47Lock : MonoBehaviour
     void Start()
     {
         Ak47Anim = GetComponent<Animator>();
+        Ak47Anim.SetTrigger("change");
     }
 
     // Update is called once per frame
@@ -54,7 +55,7 @@ public class Ak47Lock : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         lockAttack = false;
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSeconds(3);
     }
 
 

@@ -21,7 +21,7 @@ public class CrossbowLock : MonoBehaviour
     void Start()
     {
         crossbowAnim = GetComponent<Animator>();
-        
+        crossbowAnim.SetTrigger("change");
     }
 
     // Update is called once per frame
@@ -58,7 +58,7 @@ public class CrossbowLock : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         lockAttack = false;
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSeconds(3);
     }
 
     void Shoot()

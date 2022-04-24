@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainStory : MonoBehaviour
 {
-
+    public GameObject SettingObj;
 
     private void OnEnable()
     {
 
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
 
 
     }

@@ -9,12 +9,19 @@ public class Sword : MonoBehaviour
     bool isAttacked;
     bool lockAttack = false;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         swordAnim = GetComponent<Animator>();
+        swordAnim.SetTrigger("change");
+
+
         isAttacked = false;
     }
+
+
 
     // Update is called once per frame
     void Update()
