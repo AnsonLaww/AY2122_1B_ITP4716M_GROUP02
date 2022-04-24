@@ -57,6 +57,15 @@ public class PlayerData : MonoBehaviour
         PlayerScript = GetComponent<Player>();
     }
 
+    public void SetHealth(int health)
+    {
+        CurrentHealth = health;
+    }
+
+    public int GetHealth()
+    {
+        return CurrentHealth;
+    }
 
     public void UpdateStats()
     {

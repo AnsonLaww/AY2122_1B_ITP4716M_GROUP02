@@ -735,6 +735,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &846787691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846787692}
+  - component: {fileID: 846787693}
+  m_Layer: 0
+  m_Name: BlockArea
+  m_TagString: Monster
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &846787692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846787691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.13, y: -0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1173502862}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &846787693
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846787691}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.33768943
+  m_Height: 2.8336241
+  m_Direction: 1
+  m_Center: {x: 0.09455533, y: 0.91681165, z: 0.019668553}
 --- !u!1001 &1173502855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2935,12 +2980,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5667734800640563740, guid: 7060461b3f01a4f40af421a476fae449, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.9322884
+      objectReference: {fileID: 0}
+    - target: {fileID: 5667734800640563740, guid: 7060461b3f01a4f40af421a476fae449, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.569404
       objectReference: {fileID: 0}
     - target: {fileID: 5667734800640563740, guid: 7060461b3f01a4f40af421a476fae449, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.63
+      value: 4.64
       objectReference: {fileID: 0}
     - target: {fileID: 5667734800640563740, guid: 7060461b3f01a4f40af421a476fae449, type: 3}
       propertyPath: m_LocalPosition.z

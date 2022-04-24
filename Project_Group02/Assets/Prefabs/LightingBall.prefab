@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &145576829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145576830}
+  - component: {fileID: 145576831}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &145576830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145576829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8197786776237518308}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &145576831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145576829}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2264015119770269431
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,10 +57,12 @@ GameObject:
   - component: {fileID: 976604412313990097}
   - component: {fileID: 4621452156359608524}
   - component: {fileID: 110168497456217799}
-  - component: {fileID: 1313767449275912731}
+  - component: {fileID: 5132939226370730806}
+  - component: {fileID: 6000757132327218391}
+  - component: {fileID: -9135927609990691021}
   m_Layer: 0
   m_Name: LightingBall
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +77,8 @@ Transform:
   m_LocalRotation: {x: 0.0009010081, y: 0.9545439, z: -0.0026807226, w: 0.29805702}
   m_LocalPosition: {x: -21.02, y: 4.12, z: -7.89}
   m_LocalScale: {x: 0.7246871, y: 0.7246868, z: 0.7246876}
-  m_Children: []
+  m_Children:
+  - {fileID: 145576830}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.324, y: 145.318, z: 0.007}
@@ -92,11 +139,11 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2264015119770269431}
-  m_Material: {fileID: 13400000, guid: df4a9355588ac0b4fa0c29b98fbe8501, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &110168497456217799
 Animator:
@@ -117,7 +164,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1313767449275912731
+--- !u!54 &5132939226370730806
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2264015119770269431}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 36
+  m_CollisionDetection: 0
+--- !u!114 &6000757132327218391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,5 +192,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e919f35039ed85349858e5b2a2430f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 0}
-  startPosition: {fileID: 2264015119770269431}
+  targetPosition: {fileID: 5667734800640563741, guid: 7060461b3f01a4f40af421a476fae449, type: 3}
+--- !u!114 &-9135927609990691021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2264015119770269431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7f492916b255649884323a2d036137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  enemiesScriptableObj: {fileID: 11400000, guid: e193daf2784443440b6e3587adf7a12f, type: 2}

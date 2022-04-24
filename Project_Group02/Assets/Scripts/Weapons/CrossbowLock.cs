@@ -58,7 +58,7 @@ public class CrossbowLock : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         lockAttack = false;
-        yield return new WaitForSeconds(3);
+
     }
 
     void Shoot()

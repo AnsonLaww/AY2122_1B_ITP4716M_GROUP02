@@ -42,21 +42,19 @@ public class BossMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int randomTimer = Random.Range(0, 200);
+        int randomTimer = Random.Range(0, 500);
         updateTime += Time.deltaTime;
         float dist = Vector3.Distance(this.transform.position, player.transform.position);
 
-        
 
-        for(int i = 0; i < 200; i++)
-        {
+        for(int i = 0; i < 500; i++) { 
             if (i == randomTimer)
             {
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isWalking", false);
                 isAttacking = true;
                 isWalking = false;
-   
+
 
                 randomTimer = 0;
             }
@@ -69,18 +67,17 @@ public class BossMovement : MonoBehaviour
             }
         }
 
-        while (isAttacking && ballCount !=3)
+        if (isAttacking)
         {
-            StartCoroutine(WaitForSpawn());
-             agent.destination = this.transform.position;
-             ballCount++;
+            agent.destination = this.transform.position;
+            for (int j = 0; j < 3; j++)
+            {
+                StartCoroutine(WaitForSpawn());
+            }
         }
-
-        ballCount = 0;
 
         if(getHurtStats == true)
         {
-
             anim.SetTrigger("idle");
         }
       
@@ -88,9 +85,11 @@ public class BossMovement : MonoBehaviour
 
     void SpawnLightingBall()
     {
-           GameObject instantiateObject = Instantiate(Box, Instantiate_Position.transform.position, Instantiate_Position.transform.rotation);
+        GameObject instantiateObject = Instantiate(Box, Instantiate_Position.transform.position, Instantiate_Position.transform.rotation);
 
     }
+
+
 
     IEnumerator WaitForSpawn()
     {

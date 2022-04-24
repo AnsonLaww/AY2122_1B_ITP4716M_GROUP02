@@ -178,19 +178,23 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("GameOverScene");
     }
 
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Monster")
+        if (other.gameObject.CompareTag("Monster"))
         {
-            TakeDamage(5);
+            TakeDamage(other.gameObject.GetComponent<EnemiesData>().GetAttackDamage());
         }
-        if (other.CompareTag("Exp"))
+        if (other.gameObject.CompareTag("Exp"))
         {
             SetExp();
         }
-        if (other.tag == "Finish")
+        if (other.gameObject.CompareTag("Finish"))
         {
             SceneManager.LoadScene("BossScene");
         }
     }
+
+ 
 }
