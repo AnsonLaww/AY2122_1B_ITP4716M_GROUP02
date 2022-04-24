@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4707e372ea5240848904e4ae1cfb1ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exp: {fileID: 4290784987631490874, guid: c0d7074e0a360e145bb127d9a22825e0, type: 3}
+  Exp: {fileID: 0}
 --- !u!195 &5758869396156975124
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -147,4 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7f492916b255649884323a2d036137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   enemiesScriptableObj: {fileID: 11400000, guid: dfc1f4c0eaf17054c8d0bbd64887cc4b, type: 2}

@@ -18,8 +18,8 @@ public class GenerateMonster : MonoBehaviour
     {
         while (monsterCount < 10)
         {
-            xPos = Random.Range(10, 120);
-            zPos = Random.Range(60, 190);
+            xPos = Random.Range(-80, 90);
+            zPos = Random.Range(-70, -110);
 
             yield return new WaitForSeconds(0.1f);
 
@@ -30,7 +30,7 @@ public class GenerateMonster : MonoBehaviour
     {
         if (other.tag == "Player" && monsterCount < 10)
         {
-            Instantiate(monster, new Vector3(xPos, 0, zPos), Quaternion.identity);
+            Instantiate(monster, new Vector3(xPos, 7, zPos), Quaternion.identity);
             monsterCount += 1;
             StartCoroutine(MonsterDrop());
         }

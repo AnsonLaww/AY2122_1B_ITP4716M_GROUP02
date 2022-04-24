@@ -11,6 +11,8 @@ public class Ak47Lock : MonoBehaviour
     public Player PlayerScript;
     public GameObject ExpPrefab;
     public WeaponsDataScriptableObjects Weapon;
+    bool lockAttack = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,9 @@ public class Ak47Lock : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+            lockAttack = true;
+            Debug.Log("Right Click");
+            StartCoroutine(LockAttack());
         }
 
 
@@ -40,7 +45,18 @@ public class Ak47Lock : MonoBehaviour
             Ak47Anim.SetBool("isLocked", false);
             isLocked = false;
         }
+
+
+
     }
+
+    IEnumerator LockAttack()
+    {
+        yield return new WaitForSeconds(3);
+        lockAttack = false;
+        yield return new WaitForSecondsRealtime(3);
+    }
+
 
     void Shoot()
     {
@@ -50,6 +66,8 @@ public class Ak47Lock : MonoBehaviour
         {
 
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
+            hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
+            hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
 
             if (hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {
