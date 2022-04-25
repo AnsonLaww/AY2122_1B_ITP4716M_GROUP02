@@ -32,7 +32,6 @@ public class Sword : MonoBehaviour
             swordAnim.SetBool("isAttacked", true);
             isAttacked = true;
             lockAttack = true;
-            Debug.Log("Right Click");
             StartCoroutine(LockAttack());
         }
         if(Input.GetMouseButtonUp(0) && isAttacked == true)
@@ -49,11 +48,10 @@ public class Sword : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         lockAttack = false;
-        yield return new WaitForSecondsRealtime(3);
     }
 
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Monster"))
         {
