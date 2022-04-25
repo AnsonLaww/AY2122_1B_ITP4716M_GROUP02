@@ -179,21 +179,17 @@ public class Player : MonoBehaviour
     }
 
 
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Monster"))
+        if (other.gameObject.tag == "Monster")
         {
             TakeDamage(other.gameObject.GetComponent<EnemiesData>().GetAttackDamage());
         }
-        if (other.gameObject.CompareTag("Exp"))
+        else if (other.gameObject.tag == "Exp")
         {
             SetExp();
         }
-        if (other.gameObject.CompareTag("Finish"))
-        {
-            SceneManager.LoadScene("BossScene");
-        }
+ 
     }
 
  

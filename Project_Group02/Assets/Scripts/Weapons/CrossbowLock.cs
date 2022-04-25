@@ -22,6 +22,7 @@ public class CrossbowLock : MonoBehaviour
     {
         crossbowAnim = GetComponent<Animator>();
         crossbowAnim.SetTrigger("change");
+        crossbowAnim.SetBool("isLocked", false);
     }
 
     // Update is called once per frame
@@ -32,7 +33,6 @@ public class CrossbowLock : MonoBehaviour
         {
             Shoot();
             lockAttack = true;
-            Debug.Log("Right Click");
             StartCoroutine(LockAttack());
         }
 
@@ -40,14 +40,11 @@ public class CrossbowLock : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             crossbowAnim.SetBool("isLocked", true);
-            isLocked = true;
-          
-        }
-
-        if (Input.GetMouseButtonUp(1) && isLocked == true)
+            Camera.main.fieldOfView = 20;
+        }else
         {
             crossbowAnim.SetBool("isLocked", false);
-            isLocked = false;
+            Camera.main.fieldOfView = 60;
         }
 
 

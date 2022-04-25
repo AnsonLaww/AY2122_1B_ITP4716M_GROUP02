@@ -19,17 +19,18 @@ public class Ak47Lock : MonoBehaviour
     {
         Ak47Anim = GetComponent<Animator>();
         Ak47Anim.SetTrigger("change");
+        Ak47Anim.SetBool("isLocked", false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && lockAttack == false)
         {
             Shoot();
             lockAttack = true;
-            Debug.Log("Right Click");
             StartCoroutine(LockAttack());
         }
 
@@ -37,14 +38,12 @@ public class Ak47Lock : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             Ak47Anim.SetBool("isLocked", true);
-            isLocked = true;
+            Camera.main.fieldOfView = 20;
 
-        }
-
-        if (Input.GetMouseButtonUp(1) && isLocked == true)
+        }else
         {
             Ak47Anim.SetBool("isLocked", false);
-            isLocked = false;
+            Camera.main.fieldOfView = 60;
         }
 
 
@@ -55,7 +54,6 @@ public class Ak47Lock : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         lockAttack = false;
-        yield return new WaitForSeconds(3);
     }
 
 
