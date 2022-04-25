@@ -18,17 +18,19 @@ public class Ak47Lock : MonoBehaviour
     void Start()
     {
         Ak47Anim = GetComponent<Animator>();
+        Ak47Anim.SetTrigger("change");
+        Ak47Anim.SetBool("isLocked", false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && lockAttack == false)
         {
             Shoot();
             lockAttack = true;
-            Debug.Log("Right Click");
             StartCoroutine(LockAttack());
         }
 
@@ -36,25 +38,32 @@ public class Ak47Lock : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             Ak47Anim.SetBool("isLocked", true);
-            isLocked = true;
 
-        }
-
-        if (Input.GetMouseButtonUp(1) && isLocked == true)
+        }else
         {
             Ak47Anim.SetBool("isLocked", false);
-            isLocked = false;
         }
 
 
 
     }
 
+    private void FixedUpdate()
+    {
+        if (lockAttack)
+        {
+            Debug.Log("Can't Shoot");
+        }
+        else
+        {
+            Debug.Log("Can Shoot");
+        }
+    }
+
     IEnumerator LockAttack()
     {
         yield return new WaitForSeconds(3);
         lockAttack = false;
-        yield return new WaitForSecondsRealtime(3);
     }
 
 
@@ -66,7 +75,9 @@ public class Ak47Lock : MonoBehaviour
         {
 
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
+            Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
             hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
+
             hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
 
             if (hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
