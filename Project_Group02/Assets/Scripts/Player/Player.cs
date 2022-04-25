@@ -185,11 +185,16 @@ public class Player : MonoBehaviour
         {
             TakeDamage(other.gameObject.GetComponent<EnemiesData>().GetAttackDamage());
         }
-        else if (other.gameObject.tag == "Exp")
+        if (other.gameObject.tag == "Exp")
         {
             SetExp();
         }
- 
+        if (other.gameObject.tag == "Finish")
+        {
+            SceneManager.LoadScene("BossScene");
+        }
+
+
     }
 
  

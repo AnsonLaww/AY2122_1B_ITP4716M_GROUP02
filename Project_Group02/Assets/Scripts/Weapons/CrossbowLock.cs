@@ -33,26 +33,39 @@ public class CrossbowLock : MonoBehaviour
         {
             Shoot();
             lockAttack = true;
+           
             StartCoroutine(LockAttack());
+           
         }
 
 
         if (Input.GetMouseButton(1))
         {
             crossbowAnim.SetBool("isLocked", true);
-            Camera.main.fieldOfView = 20;
         }else
         {
             crossbowAnim.SetBool("isLocked", false);
-            Camera.main.fieldOfView = 60;
         }
 
 
 
     }
 
+    private void FixedUpdate()
+    {
+        if (lockAttack)
+        {
+            Debug.Log("Can't Shoot");
+        }
+        else
+        {
+            Debug.Log("Can Shoot");
+        }
+    }
+
     IEnumerator LockAttack()
     {
+
         yield return new WaitForSeconds(3);
         lockAttack = false;
 
@@ -67,6 +80,7 @@ public class CrossbowLock : MonoBehaviour
         {
 
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
+            Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
             hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
             hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
 

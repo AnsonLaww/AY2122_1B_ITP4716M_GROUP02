@@ -38,16 +38,26 @@ public class Ak47Lock : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             Ak47Anim.SetBool("isLocked", true);
-            Camera.main.fieldOfView = 20;
 
         }else
         {
             Ak47Anim.SetBool("isLocked", false);
-            Camera.main.fieldOfView = 60;
         }
 
 
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (lockAttack)
+        {
+            Debug.Log("Can't Shoot");
+        }
+        else
+        {
+            Debug.Log("Can Shoot");
+        }
     }
 
     IEnumerator LockAttack()
@@ -65,7 +75,9 @@ public class Ak47Lock : MonoBehaviour
         {
 
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
+            Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
             hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
+
             hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
 
             if (hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
