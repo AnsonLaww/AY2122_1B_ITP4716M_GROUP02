@@ -28,6 +28,7 @@ public class Mummy : MonoBehaviour
         Vector3 v3playerPos = Player.position;
         v3playerPos.y = 0f;
 
+        
 
         if (Vector3.Distance(v3Pos, v3playerPos) < (nma.radius + 0.5f) || Vector3.Distance(v3Pos, v3playerPos) > 25f)
         {
