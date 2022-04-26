@@ -81,8 +81,12 @@ public class CrossbowLock : MonoBehaviour
 
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
             Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
-            hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
-            hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
+            if (hit.transform.gameObject.GetComponent<BossMovement>())
+            {
+                hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
+                hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
+            }
+   
 
             if (hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {

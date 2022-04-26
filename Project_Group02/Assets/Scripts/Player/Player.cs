@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public GameObject Crossbow;
     public GameObject Ak47;
     public GameObject Sword;
+    public GameObject Frontsign;
 
     public PlayerData data;
 
@@ -39,18 +40,21 @@ public class Player : MonoBehaviour
         this.isOption = isOption;
     }
 
+
     // Start is called before the first frame update
     void Start()
     {
         
         HealthBar.SetMaxHealth(data.MaxHealth);
         ManaBar.SetMaxMana(data.MaxMana);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         data.UpdateStats();
+
 
 
         if (Input.GetKeyDown(KeyCode.Escape) && isOption == false && isStat == false)
@@ -64,6 +68,8 @@ public class Player : MonoBehaviour
         {
             OptionPanel.SetActive(false);
             isOption = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isOption == true && isSetting == true)
         {
@@ -71,7 +77,12 @@ public class Player : MonoBehaviour
             SettingPanel.SetActive(false);
             isOption = false;
             isSetting = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
+
+
+
 
         if (Input.GetKeyDown(KeyCode.Tab) && isStat == false && isOption == false)
         {

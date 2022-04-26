@@ -8,7 +8,7 @@ public class Sword : MonoBehaviour
     public WeaponsDataScriptableObjects Weapon;
     bool isAttacked;
     bool lockAttack = false;
-
+    public GameObject ExpPrefab;
 
 
     // Start is called before the first frame update
@@ -56,7 +56,17 @@ public class Sword : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             other.gameObject.GetComponent<EnemiesData>().SetHealth(other.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
-            other.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
+            if (other.transform.gameObject.GetComponent<BossMovement>())
+            {
+                other.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
+                other.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
+            }
+
+            if (other.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
+            {
+                Destroy(other.transform.gameObject);
+                Instantiate(ExpPrefab, other.transform.position, Quaternion.identity);
+            }
 
 
         }

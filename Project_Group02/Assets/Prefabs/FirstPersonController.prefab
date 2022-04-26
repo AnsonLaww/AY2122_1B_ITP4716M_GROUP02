@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 1606659750}
   - component: {fileID: 1606659749}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: FrontSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1606659748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3009,6 +3009,7 @@ MonoBehaviour:
   Crossbow: {fileID: 5156997559610126155}
   Ak47: {fileID: 5156997560354282081}
   Sword: {fileID: 5426903679162407940}
+  Frontsign: {fileID: 1606659747}
   data: {fileID: 5156997560378298889}
 --- !u!136 &1660331308
 CapsuleCollider:
@@ -4624,6 +4625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapon: {fileID: 11400000, guid: db0842ba6c0bf9c4a828ed7d790bdc4c, type: 2}
+  ExpPrefab: {fileID: 8745441603983185066, guid: 0479ec59b33280b488dca0d48b2223ea, type: 3}
 --- !u!65 &1913351487
 BoxCollider:
   m_ObjectHideFlags: 0
