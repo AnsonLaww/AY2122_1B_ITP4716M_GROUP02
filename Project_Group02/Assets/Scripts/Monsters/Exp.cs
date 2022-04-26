@@ -7,6 +7,7 @@ public class Exp : MonoBehaviour
 
     Transform playerTrans;
 
+
     bool bSnapping = false;
     float fSnapDist = 5f;
 
@@ -16,12 +17,14 @@ public class Exp : MonoBehaviour
     float fStartTime;
     float fDuration = 0.25f;
 
+    public static int exp;
 
     // Start is called before the first frame update
     void Start()
     {
         playerTrans = GameObject.FindWithTag("Player").transform;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -49,6 +52,7 @@ public class Exp : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            PlayerData.CurrentExp += exp;
             Destroy(gameObject);
         }
 

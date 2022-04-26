@@ -114,6 +114,7 @@ public class Player : MonoBehaviour
             Ak47.SetActive(false);
             Sword.SetActive(false);
             isCrossbow = true;
+            Crossbow.GetComponent<Animator>().SetTrigger("change");
             data.CurrentWeapons = 0;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1) && isCrossbow == true)
@@ -127,6 +128,7 @@ public class Player : MonoBehaviour
             Crossbow.SetActive(false);
             Sword.SetActive(false);
             isAk47 = true;
+            Ak47.GetComponent<Animator>().SetTrigger("change");
             data.CurrentWeapons = 1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && isAk47 == true)
@@ -151,21 +153,17 @@ public class Player : MonoBehaviour
 
     }
 
-    public void SetExp()
-    {
-        PlayerData.CurrentExp += 1;
-    }
 
-     void LevelUp()
+
+    public void LevelUp()
     {
         PlayerData.MaxExp += 1;
         PlayerData.CurrentExp = 0;
-        PlayerData.MaxHealth += 5;
-        PlayerData.MaxMana += 5;
+        PlayerData.MaxHealth += 20;
+        PlayerData.MaxMana += 20;
         PlayerData.CurrentHealth = PlayerData.MaxHealth;
         PlayerData.CurrentMana = PlayerData.MaxMana;
         PlayerData.Level += 1;
-        PlayerData.AttackStats += 5;
     }
 
     void TakeDamage(int damage)
@@ -199,10 +197,6 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Monster")
         {
             TakeDamage(other.gameObject.GetComponent<EnemiesData>().GetAttackDamage());
-        }
-        if (other.gameObject.tag == "Exp")
-        {
-            SetExp();
         }
         if (other.gameObject.tag == "Finish")
         {

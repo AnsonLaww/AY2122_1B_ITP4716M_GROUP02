@@ -14,11 +14,11 @@ public class Ak47Lock : MonoBehaviour
     bool lockAttack = false;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         Ak47Anim = GetComponent<Animator>();
-        Ak47Anim.SetTrigger("change");
         Ak47Anim.SetBool("isLocked", false);
 
     }
@@ -35,14 +35,17 @@ public class Ak47Lock : MonoBehaviour
         }
 
 
+
         if (Input.GetMouseButton(1))
         {
             Ak47Anim.SetBool("isLocked", true);
 
-        }else
+        }
+        else if (Input.GetMouseButtonUp(1))
         {
             Ak47Anim.SetBool("isLocked", false);
         }
+
 
 
 
@@ -53,6 +56,7 @@ public class Ak47Lock : MonoBehaviour
         if (lockAttack)
         {
             Debug.Log("Can't Shoot");
+
         }
         else
         {
@@ -76,14 +80,19 @@ public class Ak47Lock : MonoBehaviour
 
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
             Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
-            hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
+            if (hit.transform.gameObject.GetComponent<BossMovement>())
+            {
+                hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
+                hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
+            }
 
-            hit.transform.gameObject.GetComponent<BossMovement>().SetHurtStats(true);
 
             if (hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {
-                Destroy(hit.transform.gameObject);
                 Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
+                Exp.exp = hit.transform.gameObject.GetComponent<EnemiesData>().GetExp();
+                Destroy(hit.transform.gameObject);
+
             }
         }
     }

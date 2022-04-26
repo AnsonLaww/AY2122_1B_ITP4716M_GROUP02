@@ -17,4 +17,4 @@ MonoBehaviour:
   Health: 80
   AttackDamage: 10
   Defend: 10
-  Experience: 1
+  Experience: 5

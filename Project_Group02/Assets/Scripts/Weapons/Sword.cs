@@ -64,8 +64,9 @@ public class Sword : MonoBehaviour
 
             if (other.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {
-                Destroy(other.transform.gameObject);
                 Instantiate(ExpPrefab, other.transform.position, Quaternion.identity);
+                Exp.exp = other.transform.gameObject.GetComponent<EnemiesData>().GetExp();
+                Destroy(other.transform.gameObject);
             }
 
 

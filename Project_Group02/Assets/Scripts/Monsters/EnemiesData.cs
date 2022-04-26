@@ -48,5 +48,9 @@ public class EnemiesData : MonoBehaviour
         return attackDamage;
     }
 
+    public int GetExp()
+    {
+        return experience;
+    }
 
 }

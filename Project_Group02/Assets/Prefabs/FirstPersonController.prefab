@@ -2971,6 +2971,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 11400000, guid: 93e478d4ed37300438beb8daa7556b43, type: 2}
   - {fileID: 11400000, guid: 549b1d1ca80fbe140815986d96735db2, type: 2}
+  - {fileID: 11400000, guid: db0842ba6c0bf9c4a828ed7d790bdc4c, type: 2}
   CurrentWeapons: 0
   HealthText: {fileID: 0}
   ManaText: {fileID: 0}

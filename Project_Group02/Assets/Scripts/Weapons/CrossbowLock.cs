@@ -21,7 +21,6 @@ public class CrossbowLock : MonoBehaviour
     void Start()
     {
         crossbowAnim = GetComponent<Animator>();
-        crossbowAnim.SetTrigger("change");
         crossbowAnim.SetBool("isLocked", false);
     }
 
@@ -42,7 +41,8 @@ public class CrossbowLock : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             crossbowAnim.SetBool("isLocked", true);
-        }else
+
+        }else if(Input.GetMouseButtonUp(1))
         {
             crossbowAnim.SetBool("isLocked", false);
         }
@@ -90,8 +90,10 @@ public class CrossbowLock : MonoBehaviour
 
             if (hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {
-                Destroy(hit.transform.gameObject);
                 Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
+                Exp.exp = hit.transform.gameObject.GetComponent<EnemiesData>().GetExp();
+                Destroy(hit.transform.gameObject);
+
             }
 
         }

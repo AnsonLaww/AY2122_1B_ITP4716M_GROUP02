@@ -2299,7 +2299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefd2cdcd849be74ab023184f107caa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5156997560378298935, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
+  player: {fileID: 0}
   agent: {fileID: 0}
   updateTime: 0
   Instantiate_Position: {fileID: 6902026404200745601}

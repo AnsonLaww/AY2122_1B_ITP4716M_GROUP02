@@ -5467,6 +5467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4996175854925855095, guid: 413c9288c3aedd8499d0a41729f8f357, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5302023920032941088, guid: 413c9288c3aedd8499d0a41729f8f357, type: 3}
       propertyPath: m_Name
       value: Pyramid2
@@ -8124,7 +8128,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: e46a685ba036f5641b1acb481935675f, type: 2}
   m_audioClip: {fileID: 8300000, guid: c50039f5cf80c7b45a677d7812a9e2b6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

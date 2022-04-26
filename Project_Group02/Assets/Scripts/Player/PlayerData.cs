@@ -56,6 +56,11 @@ public class PlayerData : MonoBehaviour
         return CurrentHealth;
     }
 
+    public void SetExp(int exp)
+    {
+        CurrentExp += exp;
+    }
+
     public void UpdateStats()
     {
         LevelText.text = "Lv : " + Level;
