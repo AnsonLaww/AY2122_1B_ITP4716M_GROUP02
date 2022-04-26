@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
             isOption = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            Frontsign.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isOption == true && isSetting == false)
         {
@@ -70,6 +71,7 @@ public class Player : MonoBehaviour
             isOption = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            Frontsign.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isOption == true && isSetting == true)
         {
@@ -79,6 +81,8 @@ public class Player : MonoBehaviour
             isSetting = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            Frontsign.SetActive(true);
+
         }
 
 
