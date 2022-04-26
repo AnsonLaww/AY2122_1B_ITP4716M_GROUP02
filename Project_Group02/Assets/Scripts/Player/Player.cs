@@ -45,8 +45,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         
-        HealthBar.SetMaxHealth(data.MaxHealth);
-        ManaBar.SetMaxMana(data.MaxMana);
+        HealthBar.SetMaxHealth(PlayerData.MaxHealth);
+        HealthBar.SetHealth(PlayerData.CurrentHealth);
+        ManaBar.SetMaxMana(PlayerData.MaxMana);
 
     }
 
@@ -92,8 +93,7 @@ public class Player : MonoBehaviour
         {
             StatsPanel.SetActive(true);
             isStat = true;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && isStat == true)
         {
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
             isStat = false;
         }
 
-        if (data.CurrentExp >= data.MaxExp)
+        if (PlayerData.CurrentExp >= PlayerData.MaxExp)
         {
             LevelUp();
         }
@@ -153,38 +153,38 @@ public class Player : MonoBehaviour
 
     public void SetExp()
     {
-        data.CurrentExp += 1;
+        PlayerData.CurrentExp += 1;
     }
 
      void LevelUp()
     {
-        data.MaxExp += 1;
-        data.CurrentExp = 0;
-        data.MaxHealth += 5;
-        data.MaxMana += 5;
-        data.CurrentHealth = data.MaxHealth;
-        data.CurrentMana = data.MaxMana;
-        data.Level += 1;
-        data.AttackStats += 5;
+        PlayerData.MaxExp += 1;
+        PlayerData.CurrentExp = 0;
+        PlayerData.MaxHealth += 5;
+        PlayerData.MaxMana += 5;
+        PlayerData.CurrentHealth = PlayerData.MaxHealth;
+        PlayerData.CurrentMana = PlayerData.MaxMana;
+        PlayerData.Level += 1;
+        PlayerData.AttackStats += 5;
     }
 
     void TakeDamage(int damage)
     {
-        data.CurrentHealth -= damage;
+        PlayerData.CurrentHealth -= damage;
 
-        HealthBar.SetHealth(data.CurrentHealth);
+        HealthBar.SetHealth(PlayerData.CurrentHealth);
 
-        if(data.CurrentHealth <= 0)
+        if(PlayerData.CurrentHealth <= 0)
         {
-            data.CurrentHealth = 0;
+            PlayerData.CurrentHealth = 0;
             LoadScene();
         }
     }
 
     void UseMana(int mana)
     {
-        data.CurrentMana -= mana;
-        ManaBar.SetMana(data.CurrentMana);
+        PlayerData.CurrentMana -= mana;
+        ManaBar.SetMana(PlayerData.CurrentMana);
     }
 
 

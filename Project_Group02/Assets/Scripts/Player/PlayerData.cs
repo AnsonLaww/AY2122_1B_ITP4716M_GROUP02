@@ -11,16 +11,16 @@ public class PlayerData : MonoBehaviour
 
     public int DialogueNumber;
 
-    public int MaxHealth = 100;
-    public int CurrentHealth;
-    public int MaxMana = 100;
-    public int CurrentMana;
-    public int MaxSouls = 5;
-    public int CurrentSouls;
-    public int AttackStats = 0;
-    public int Level = 1;
-    public int CurrentExp = 0;
-    public int MaxExp = 10;
+    public static int MaxHealth = 100;
+    public static int CurrentHealth = 100;
+    public static int MaxMana = 100;
+    public static int CurrentMana = 100;
+    public static int MaxSouls = 5;
+    public static int CurrentSouls = 0;
+    public static int AttackStats = 0;
+    public static int Level = 1;
+    public static int CurrentExp = 0;
+    public static int MaxExp = 10;
 
 
     public WeaponsDataScriptableObjects[] weapons;
@@ -41,18 +41,7 @@ public class PlayerData : MonoBehaviour
 
     private void Start()
     {
-        MaxHealth = 100;
-        MaxMana = 100;
-        CurrentExp = 0;
-        CurrentHealth = 100;
-        CurrentMana = 100;
-        CurrentSouls = 0;
-        MaxExp = 10;
-        MaxSouls = 5;
-        Level = 1;
-        AttackStats = 10;
-        CurrentWeapons = 0;
-  
+
 
         PlayerScript = GetComponent<Player>();
     }
