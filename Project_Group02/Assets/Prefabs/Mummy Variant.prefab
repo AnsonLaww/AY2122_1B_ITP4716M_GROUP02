@@ -10,10 +10,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 7
-  m_Height: 1
+  m_Radius: 5.47
+  m_Height: 1.9
   m_Direction: 1
-  m_Center: {x: 0, y: 7, z: 0}
+  m_Center: {x: -0.02, y: 7, z: 0}
 --- !u!95 &-7238173323602430969
 Animator:
   serializedVersion: 3
@@ -79,7 +79,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: -1.35
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &6368229147999493761
