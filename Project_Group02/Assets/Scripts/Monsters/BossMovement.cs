@@ -19,7 +19,8 @@ public class BossMovement : MonoBehaviour
     int ballCount = 0;
     public HealthBar bar;
     EnemiesData enemdata;
-    string[] sounds = { "Boss_Sound_One", "Boss_Sound_Two", "Boss_Sound_Three" };
+   
+    
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,12 @@ public class BossMovement : MonoBehaviour
         bar.SetHealth(enemdata.GetHealth());
 
 
+      
+
     }
+
+
+
 
     public bool GetHurt()
     {
@@ -55,8 +61,7 @@ public class BossMovement : MonoBehaviour
         updateTime += Time.deltaTime;
         float dist = Vector3.Distance(this.transform.position, player.transform.position);
 
-
-        for(int i = 0; i < 500; i++) { 
+        for (int i = 0; i < 500; i++) { 
             if (i == randomTimer)
             {
                 anim.SetBool("isAttacking", true);
@@ -76,8 +81,11 @@ public class BossMovement : MonoBehaviour
             }
         }
 
+
+
         if (isAttacking)
         {
+           
             agent.destination = this.transform.position;
             for (int j = 0; j < 3; j++)
             {
@@ -91,6 +99,7 @@ public class BossMovement : MonoBehaviour
         }
       
     }
+
 
     void SpawnLightingBall()
     {
