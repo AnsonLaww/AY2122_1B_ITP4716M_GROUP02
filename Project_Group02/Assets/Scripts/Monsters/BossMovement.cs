@@ -118,7 +118,7 @@ public class BossMovement : MonoBehaviour
     {
         if (other.gameObject.tag =="Weapon")
         {
-            
+            bar.SetHealth(enemdata.GetHealth() - PlayerData.AttackStats);
         }
     }
 
