@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
 
 public class GameOverScript : MonoBehaviour
 {
@@ -17,7 +18,10 @@ public class GameOverScript : MonoBehaviour
 
     public void EndGame()
     {
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
         Application.Quit();
+        #endif
     }
-    
+
 }
