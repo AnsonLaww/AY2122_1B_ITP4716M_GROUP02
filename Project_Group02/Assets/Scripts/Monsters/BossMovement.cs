@@ -18,8 +18,8 @@ public class BossMovement : MonoBehaviour
     public GameObject Box;
     int ballCount = 0;
     public HealthBar bar;
-    EnemiesData enemdata; 
-
+    EnemiesData enemdata;
+    string[] sounds = { "Boss_Sound_One", "Boss_Sound_Two", "Boss_Sound_Three" };
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,7 @@ public class BossMovement : MonoBehaviour
         isAttacking = false;
         bar.SetMaxHealth(enemdata.GetMaxHealth());
         bar.SetHealth(enemdata.GetHealth());
+
 
     }
 
@@ -49,6 +50,7 @@ public class BossMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         int randomTimer = Random.Range(0, 500);
         updateTime += Time.deltaTime;
         float dist = Vector3.Distance(this.transform.position, player.transform.position);
