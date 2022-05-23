@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class BossMovement : MonoBehaviour
 {
     float moveSpeed = 3f;
@@ -16,6 +17,9 @@ public class BossMovement : MonoBehaviour
     public GameObject Instantiate_Position;
     public GameObject Box;
     int ballCount = 0;
+    public HealthBar bar;
+    EnemiesData enemdata; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +27,11 @@ public class BossMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
+        enemdata = GetComponent<EnemiesData>();
         isWalking = false;
         isAttacking = false;
+        bar.SetMaxHealth(enemdata.GetMaxHealth());
+        bar.SetHealth(enemdata.GetHealth());
 
     }
 
@@ -104,6 +111,14 @@ public class BossMovement : MonoBehaviour
         {
             agent.destination = player.transform.position;
             updateTime = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag =="Weapon")
+        {
+            
         }
     }
 
