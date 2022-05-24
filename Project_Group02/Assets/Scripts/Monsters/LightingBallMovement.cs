@@ -24,7 +24,7 @@ public class LightingBallMovement : MonoBehaviour
 
         Vector3 direction = targetPosition.transform.position - this.transform.position;
         direction.Normalize();
-        ballRigid.AddForce(direction * 1500 * Time.deltaTime);
+        ballRigid.AddForce(direction * 3000 * Time.deltaTime);
         StartCoroutine(DestroyObject());
 
     }
