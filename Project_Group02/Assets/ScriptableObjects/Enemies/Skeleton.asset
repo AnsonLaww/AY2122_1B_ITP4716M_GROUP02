@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Skeleton
   Descriptions: 
-  Health: 80
+  Health: 1
   AttackDamage: 10
   Defend: 10
   Experience: 5

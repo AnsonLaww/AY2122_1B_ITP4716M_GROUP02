@@ -4,35 +4,55 @@ using UnityEngine;
 
 public class GenerateMonster : MonoBehaviour
 {
-    public GameObject monster;
-    public int xPos;
-    public int zPos;
-    public int monsterCount = 0;
+    public GameObject[] monsters;
+    public int xPos = 0;
+    public int zPos = 0;
+
+    const int MAX_MONSTER_COUNTER = 10;
+    public List<GameObject> monstersCount;
 
 
-
+    private void Start()
+    {
+        monstersCount = new List<GameObject>();
+    }
 
 
     // Update is called once per frame
     IEnumerator MonsterDrop()
     {
-        while (monsterCount < 10)
-        {
-            xPos = Random.Range(-80, 90);
-            zPos = Random.Range(-70, -110);
+        xPos = Random.Range(-80, 90);
+        zPos = Random.Range(-70, -110);
 
-            yield return new WaitForSeconds(0.1f);
 
-        }
+        yield return new WaitForSeconds(10f);
+
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && monsterCount < 10)
+        
+        if (other.tag == "Player" && monstersCount.Count < 10)
         {
-            Instantiate(monster, new Vector3(xPos, 7, zPos), Quaternion.identity);
-            monsterCount += 1;
-            StartCoroutine(MonsterDrop());
+            foreach(GameObject monster in monsters)
+            {
+
+                Instantiate(monster, new Vector3(xPos, 7, zPos), Quaternion.identity);
+                monstersCount.Add(monster);
+                StartCoroutine(MonsterDrop());
+
+            }
+
         }
+        
     }
+
+    public void SetMonsterCountList(List<GameObject> monstersCount)
+    {
+        this.monstersCount = monstersCount;
+    }
+
+
+
 }
+

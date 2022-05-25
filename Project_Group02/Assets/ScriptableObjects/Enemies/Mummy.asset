@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Mummy
   Descriptions: 
-  Health: 100
+  Health: 1
   AttackDamage: 5
   Defend: 10
   Experience: 1

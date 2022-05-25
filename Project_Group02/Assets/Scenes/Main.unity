@@ -1992,10 +1992,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fe278f338639448b1e7b191d6eacc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 1202314602363510100, guid: 2b7dbeae200f86340b862d5d219f9e1d, type: 3}
+  monsters:
+  - {fileID: 1202314602363510100, guid: 2b7dbeae200f86340b862d5d219f9e1d, type: 3}
+  - {fileID: 6098181185651958736, guid: 515135ac50c873449bbac8d40285b842, type: 3}
   xPos: 0
   zPos: 0
-  monsterCount: 0
+  monstersCount: []
 --- !u!4 &332412397
 Transform:
   m_ObjectHideFlags: 0
@@ -2021,7 +2023,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 42.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &351675665
 PrefabInstance:
@@ -2573,6 +2575,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5156997559610126157, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
+      propertyPath: monsters
+      value: 
+      objectReference: {fileID: 332412396}
     - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.183
@@ -2976,67 +2982,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000012314331726, guid: 6e659ebd79ad8c5408cd18c2a0e534eb, type: 3}
   m_PrefabInstance: {fileID: 598836315}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &611043847
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 611043850}
-  - component: {fileID: 611043849}
-  - component: {fileID: 611043848}
-  m_Layer: 0
-  m_Name: EnemiesManager_mummy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!135 &611043848
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611043847}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 15
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &611043849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611043847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42fe278f338639448b1e7b191d6eacc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monster: {fileID: 6098181185651958736, guid: 515135ac50c873449bbac8d40285b842, type: 3}
-  xPos: 0
-  zPos: 0
-  monsterCount: 0
---- !u!4 &611043850
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611043847}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.6, y: 7.01, z: -77.47}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &613987617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6427,7 +6372,7 @@ Transform:
   m_Children:
   - {fileID: 222027390}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 2.167, z: 0}
 --- !u!1001 &1469621577
 PrefabInstance:
@@ -7355,7 +7300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7127861514365741302, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7127861514365741302, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8126,7 +8071,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: e46a685ba036f5641b1acb481935675f, type: 2}
   m_audioClip: {fileID: 8300000, guid: c50039f5cf80c7b45a677d7812a9e2b6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 1
   Mute: 0

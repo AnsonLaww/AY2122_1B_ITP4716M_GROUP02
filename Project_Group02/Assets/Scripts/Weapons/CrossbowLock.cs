@@ -13,6 +13,7 @@ public class CrossbowLock : MonoBehaviour
     public GameObject ExpPrefab;
     public WeaponsDataScriptableObjects Weapon;
     bool lockAttack = false;
+    public GenerateMonster monsters;
 
 
 
@@ -92,7 +93,9 @@ public class CrossbowLock : MonoBehaviour
             {
                 Instantiate(ExpPrefab, hit.transform.position, Quaternion.identity);
                 Exp.exp = hit.transform.gameObject.GetComponent<EnemiesData>().GetExp();
+                
                 Destroy(hit.transform.gameObject);
+
 
             }
 
