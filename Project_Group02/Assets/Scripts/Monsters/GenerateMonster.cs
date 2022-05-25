@@ -8,15 +8,10 @@ public class GenerateMonster : MonoBehaviour
     public int xPos = 0;
     public int zPos = 0;
 
-    const int MAX_MONSTER_COUNTER = 10;
-    public List<GameObject> monstersCount;
+    int monsterCount = 0;
 
-
-    private void Start()
-    {
-        monstersCount = new List<GameObject>();
-    }
-
+    float nextSpawn = 0.0f;
+    float spawnRate = 5f;
 
     // Update is called once per frame
     IEnumerator MonsterDrop()
@@ -31,28 +26,23 @@ public class GenerateMonster : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
-        if (other.tag == "Player" && monstersCount.Count < 10)
+
+        if (other.tag == "Player")
         {
-            foreach(GameObject monster in monsters)
+
+            if (Time.time > nextSpawn)
             {
-
-                Instantiate(monster, new Vector3(xPos, 7, zPos), Quaternion.identity);
-                monstersCount.Add(monster);
-                StartCoroutine(MonsterDrop());
-
+                nextSpawn = Time.time + spawnRate;
+                foreach (GameObject monster in monsters)
+                {
+                    Instantiate(monster, new Vector3(xPos, 7, zPos), Quaternion.identity);
+                    StartCoroutine(MonsterDrop());
+                   
+                }
             }
-
         }
-        
     }
-
-    public void SetMonsterCountList(List<GameObject> monstersCount)
-    {
-        this.monstersCount = monstersCount;
-    }
-
-
 
 }
+
 
