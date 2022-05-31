@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword
   description: 
-  attack: 20
+  attack: 10
   upgradeCost: 100

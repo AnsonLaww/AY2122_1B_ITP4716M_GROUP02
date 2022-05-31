@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crossbow
   description: Can shoot the arrows
-  attack: 30
+  attack: 10
   upgradeCost: 10

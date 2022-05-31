@@ -8,7 +8,6 @@ public class GenerateMonster : MonoBehaviour
     public int xPos = 0;
     public int zPos = 0;
 
-    int monsterCount = 0;
 
     float nextSpawn = 0.0f;
     float spawnRate = 5f;

@@ -6,8 +6,7 @@ public class CrossbowLock : MonoBehaviour
 {
 
     Animator crossbowAnim;
-    bool isLocked = false;
-    float range = 1000f;
+    float range = 10000f;
     public Camera CrossbowCamara;
     public Player PlayerScript;
     public GameObject ExpPrefab;
@@ -67,18 +66,22 @@ public class CrossbowLock : MonoBehaviour
     {
 
         yield return new WaitForSeconds(3);
+        FindObjectOfType<AudioManager>().Play("CrossbowReload");
         lockAttack = false;
+
 
     }
 
     void Shoot()
     {
 
+        FindObjectOfType<AudioManager>().Play("CrossbowAttack");
+
         RaycastHit hit;
 
         if (Physics.Raycast(CrossbowCamara.transform.position, CrossbowCamara.transform.forward, out hit, range) && hit.collider.tag == "Monster")
         {
-
+            Debug.DrawLine(CrossbowCamara.transform.position, hit.transform.position, Color.red, 0.5f, true);
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
             Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
             if (hit.transform.gameObject.GetComponent<BossMovement>())

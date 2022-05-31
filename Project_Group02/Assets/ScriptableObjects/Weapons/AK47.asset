@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: AK47
   description: Can shoot the bullets
-  attack: 30
+  attack: 5
   upgradeCost: 20

@@ -6,17 +6,16 @@ using UnityEngine.AI;
 
 public class BossMovement : MonoBehaviour
 {
-    float moveSpeed = 3f;
     Animator anim;
     Rigidbody rig;
     public GameObject player;
-    bool isWalking, isAttacking;
+    bool isWalking;
+    bool isAttacking;
     public NavMeshAgent agent;
     public float updateTime = 0;
     bool getHurtStats = false;
     public GameObject Instantiate_Position;
     public GameObject Box;
-    int ballCount = 0;
     public HealthBar bar;
     EnemiesData enemdata;
    

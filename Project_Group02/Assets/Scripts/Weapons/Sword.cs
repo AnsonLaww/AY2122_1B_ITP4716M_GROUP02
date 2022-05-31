@@ -7,7 +7,6 @@ public class Sword : MonoBehaviour
     Animator swordAnim;
     public WeaponsDataScriptableObjects Weapon;
     bool isAttacked;
-    bool lockAttack = false;
     public GameObject ExpPrefab;
 
 
@@ -31,8 +30,6 @@ public class Sword : MonoBehaviour
         {
             swordAnim.SetBool("isAttacked", true);
             isAttacked = true;
-            lockAttack = true;
-            StartCoroutine(LockAttack());
         }
         if(Input.GetMouseButtonUp(0) && isAttacked == true)
         {
@@ -44,11 +41,6 @@ public class Sword : MonoBehaviour
     }
 
 
-    IEnumerator LockAttack()
-    {
-        yield return new WaitForSeconds(3);
-        lockAttack = false;
-    }
 
 
     private void OnTriggerEnter(Collider other)
