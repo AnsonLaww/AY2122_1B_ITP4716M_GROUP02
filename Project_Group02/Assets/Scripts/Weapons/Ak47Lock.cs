@@ -10,7 +10,13 @@ public class Ak47Lock : MonoBehaviour
     public Player PlayerScript;
     public GameObject ExpPrefab;
     public WeaponsDataScriptableObjects Weapon;
-    bool lockAttack = false;
+    bool canShoot = true;
+
+    //Weapon Recoil
+
+
+
+
 
 
 
@@ -19,18 +25,18 @@ public class Ak47Lock : MonoBehaviour
     {
         Ak47Anim = GetComponent<Animator>();
         Ak47Anim.SetBool("isLocked", false);
-
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetMouseButton(0) && lockAttack == false)
+        if (Input.GetMouseButton(0) && canShoot)
         {
+            canShoot = false;
             Shoot();
-            lockAttack = true;
-            StartCoroutine(LockAttack());
+            StartCoroutine(ShootGun());
+
         }
 
 
@@ -50,28 +56,20 @@ public class Ak47Lock : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        if (lockAttack)
-        {
-            Debug.Log("Can't Shoot");
 
-        }
-        else
-        {
-            Debug.Log("Can Shoot");
-        }
-    }
 
-    IEnumerator LockAttack()
+    IEnumerator ShootGun()
     {
-        yield return new WaitForSeconds(3);
-        lockAttack = false;
+
+        yield return new WaitForSeconds(0.1f);
+        canShoot = true;
+        FindObjectOfType<AudioManager>().Play("AkFire");
     }
 
 
     void Shoot()
     {
+        transform.position -= Vector3.forward * 0.1f;
         RaycastHit hit;
 
         if (Physics.Raycast(Ak47Camara.transform.position, Ak47Camara.transform.forward, out hit, range) && hit.collider.tag == "Monster")

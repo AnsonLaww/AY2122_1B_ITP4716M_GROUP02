@@ -62,3 +62,27 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: CrossbowAttack
+    clip: {fileID: 8300000, guid: 6abccb4b71ab00d41876ce44f65a8a60, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CrossbowReload
+    clip: {fileID: 8300000, guid: e9120d223e445864988a67485f864cf3, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AkFire
+    clip: {fileID: 8300000, guid: 35d3bd0fa23194343b05b2c33aa64c45, type: 3}
+    volume: 0.31
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AkReload
+    clip: {fileID: 8300000, guid: 3cecf227804b0a144aa5f192c0532d52, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
