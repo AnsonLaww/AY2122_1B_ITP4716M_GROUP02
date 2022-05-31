@@ -16,3 +16,5 @@ MonoBehaviour:
   description: Can shoot the bullets
   attack: 10
   upgradeCost: 20
+  MaxAmount: 100
+  Amount: 40

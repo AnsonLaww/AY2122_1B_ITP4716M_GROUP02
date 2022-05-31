@@ -16,3 +16,5 @@ MonoBehaviour:
   description: Can shoot the arrows
   attack: 20
   upgradeCost: 10
+  MaxAmount: 10
+  Amount: 1

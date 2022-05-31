@@ -1810,38 +1810,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.93602663
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.3519294
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156997560339949559, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 41.211
-      objectReference: {fileID: 0}
     - target: {fileID: 5156997560378298889, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
       propertyPath: ExpText
       value: 
@@ -1858,6 +1826,10 @@ PrefabInstance:
       propertyPath: SoulsText
       value: 
       objectReference: {fileID: 5894261006487182988}
+    - target: {fileID: 5156997560378298889, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
+      propertyPath: AmountText
+      value: 
+      objectReference: {fileID: 5089057179600977094}
     - target: {fileID: 5156997560378298889, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
       propertyPath: AttackText
       value: 
@@ -2180,10 +2152,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -1.9133968
       objectReference: {fileID: 0}
-    - target: {fileID: 6140613218380670583, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 18.11206
-      objectReference: {fileID: 0}
     - target: {fileID: 7059523232205951875, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2286,6 +2254,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+--- !u!114 &5089057179600977094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 633016782, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+  m_PrefabInstance: {fileID: 5089057179600977093}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5302023919670151293
 GameObject:
   m_ObjectHideFlags: 0

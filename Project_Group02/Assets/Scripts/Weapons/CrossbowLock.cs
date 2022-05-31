@@ -21,20 +21,22 @@ public class CrossbowLock : MonoBehaviour
     {
         crossbowAnim = GetComponent<Animator>();
         crossbowAnim.SetBool("isLocked", false);
+        Weapon.Amount = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0) && lockAttack == false)
+        if (Input.GetMouseButtonDown(0) && lockAttack == false && Weapon.Amount > 0)
         {
             Shoot();
             lockAttack = true;
-           
+            Weapon.Amount -= 1;
             StartCoroutine(LockAttack());
-           
         }
+
+        
 
 
         if (Input.GetMouseButton(1))
@@ -67,6 +69,8 @@ public class CrossbowLock : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         FindObjectOfType<AudioManager>().Play("CrossbowReload");
+        Weapon.Amount = 1;
+        Weapon.MaxAmount -= 1;
         lockAttack = false;
 
 

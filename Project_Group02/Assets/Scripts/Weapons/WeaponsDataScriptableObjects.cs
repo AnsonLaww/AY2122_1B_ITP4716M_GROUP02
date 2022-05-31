@@ -9,6 +9,9 @@ public class WeaponsDataScriptableObjects : ScriptableObject
     public string description;
     public int attack;
     public int upgradeCost;
+    public int MaxAmount;
+    public int Amount;
+
 
 
 }

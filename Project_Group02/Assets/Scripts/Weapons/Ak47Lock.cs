@@ -12,9 +12,6 @@ public class Ak47Lock : MonoBehaviour
     public WeaponsDataScriptableObjects Weapon;
     bool canShoot = true;
 
-    //Weapon Recoil
-
-
 
 
 
@@ -31,14 +28,26 @@ public class Ak47Lock : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButton(0) && canShoot)
+        if (Input.GetMouseButton(0) && canShoot && Weapon.Amount > 0)
         {
             canShoot = false;
             Shoot();
+            Weapon.Amount -= 1;
             StartCoroutine(ShootGun());
+            if (Weapon.Amount <= 0)
+            {
+                canShoot = false;
+                StartCoroutine(LockAttack());
+            }
+
+            if (Weapon.MaxAmount <= 0)
+            {
+                canShoot = false;
+            }
 
         }
 
+ 
 
 
         if (Input.GetMouseButton(1))
@@ -56,6 +65,18 @@ public class Ak47Lock : MonoBehaviour
 
     }
 
+    IEnumerator LockAttack()
+    {
+
+
+        FindObjectOfType<AudioManager>().Play("AkReload");
+        yield return new WaitForSeconds(3);
+        Weapon.Amount = 40;
+        Weapon.MaxAmount -= 15;
+        canShoot = true;
+
+
+    }
 
 
     IEnumerator ShootGun()
