@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Frontsign.SetActive(false);
+            Time.timeScale = 0;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isOption == true && isSetting == false)
         {
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Frontsign.SetActive(true);
+            Time.timeScale = 0;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isOption == true && isSetting == true)
         {
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Frontsign.SetActive(true);
+            Time.timeScale = 1;
 
         }
 
@@ -91,8 +94,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab) && isStat == false && isOption == false)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             StatsPanel.SetActive(true);
             isStat = true;
+            Frontsign.SetActive(false);
+            Time.timeScale = 0;
 
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && isStat == true)
@@ -101,6 +108,10 @@ public class Player : MonoBehaviour
             isOption = false;
             isSetting = false;
             isStat = false;
+            Frontsign.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1;
         }
 
         if (PlayerData.CurrentExp >= PlayerData.MaxExp)
@@ -157,7 +168,7 @@ public class Player : MonoBehaviour
 
     public void LevelUp()
     {
-        PlayerData.MaxExp += 1;
+        PlayerData.MaxExp += 10;
         PlayerData.CurrentExp = 0;
         PlayerData.MaxHealth += 20;
         PlayerData.MaxMana += 20;
