@@ -76,7 +76,7 @@ public class PlayerData : MonoBehaviour
 
     public void UpGradeHealth()
     {
-        if(Skill <=3 && Skill > 0)
+        if(Skill <=3 || Skill > 0)
         {
             MaxHealth += 1;
             updateSkill += 1;
@@ -86,7 +86,7 @@ public class PlayerData : MonoBehaviour
 
     public void DownGradeHealth()
     {
-        if (Skill <= 3 && Skill > 0)
+        if (Skill <= 3 || Skill > 0)
         {
             MaxHealth -= 1;
             updateSkill -= 1;
@@ -96,7 +96,7 @@ public class PlayerData : MonoBehaviour
 
     public void UpGradeMana()
     {
-        if (Skill <= 3 && Skill > 0)
+        if (Skill <= 3 || Skill > 0)
         {
             MaxMana += 1;
             updateSkill += 1;
@@ -106,7 +106,7 @@ public class PlayerData : MonoBehaviour
 
     public void DownGradeMana()
     {
-        if (Skill <= 3 && Skill > 0)
+        if (Skill <= 3 || Skill > 0)
         {
             MaxMana -= 1;
             updateSkill -= 1;
@@ -116,7 +116,7 @@ public class PlayerData : MonoBehaviour
 
     public void UpGradeSouls()
     {
-        if (Skill <= 3 && Skill > 0)
+        if (Skill <= 3 || Skill > 0)
         {
             MaxSouls += 1;
             updateSkill += 1;
@@ -126,7 +126,7 @@ public class PlayerData : MonoBehaviour
 
     public void DownGradeSouls()
     {
-        if (Skill <= 3 && Skill > 0)
+        if (Skill <= 3 || Skill > 0)
         {
             MaxSouls -= 1;
             updateSkill -= 1;
@@ -136,7 +136,7 @@ public class PlayerData : MonoBehaviour
 
     public void UpGradeAttack()
     {
-        if (Skill <= 3 && Skill > 0)
+        if (Skill <= 3 || Skill > 0)
         {
             AttackStats += 1;
             updateSkill += 1;
@@ -146,7 +146,7 @@ public class PlayerData : MonoBehaviour
 
     public void DownGradeAttack()
     {
-        if (Skill <= 3 && Skill > 0)
+        if (Skill <= 3 || Skill > 0)
         {
             AttackStats -= 1;
             updateSkill -= 1;

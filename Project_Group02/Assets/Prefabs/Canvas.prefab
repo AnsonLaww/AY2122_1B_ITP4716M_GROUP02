@@ -9452,7 +9452,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6317944699755187232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: UpGradeAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6317944699823708982
 GameObject:
   m_ObjectHideFlags: 0
@@ -9879,7 +9891,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6317944700113168050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: DownGradeHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6317944700113524544
 GameObject:
   m_ObjectHideFlags: 0
@@ -10000,7 +10024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6317944700113524573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5156997560378298889, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: DownGradeAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6317944700154909080
 GameObject:
   m_ObjectHideFlags: 0
@@ -10523,7 +10559,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6317944700200452974}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: UpGradeMana
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6317944700372432567
 GameObject:
   m_ObjectHideFlags: 0
@@ -10778,7 +10826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6317944700421088141}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5156997560378298889, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: DownGradeSouls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6317944700430692705
 GameObject:
   m_ObjectHideFlags: 0
@@ -10975,7 +11035,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6317944700569220267}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: DownGradeMana
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6317944700681022837
 GameObject:
   m_ObjectHideFlags: 0
@@ -11364,7 +11436,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6317944700878387601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5156997560378298889, guid: 71133a95f91607945afafa8b239e5e67, type: 3}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: UpGradeSouls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6317944700891297335
 GameObject:
   m_ObjectHideFlags: 0
@@ -12009,7 +12093,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6317944701105344648}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: UpGradeHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6317944701161289586
 GameObject:
   m_ObjectHideFlags: 0
