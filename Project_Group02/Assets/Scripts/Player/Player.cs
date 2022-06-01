@@ -176,6 +176,7 @@ public class Player : MonoBehaviour
         PlayerData.CurrentHealth = PlayerData.MaxHealth;
         PlayerData.CurrentMana = PlayerData.MaxMana;
         PlayerData.Level += 1;
+        PlayerData.Skill += 3;
     }
 
     void TakeDamage(int damage)
