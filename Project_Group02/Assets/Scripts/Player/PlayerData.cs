@@ -23,6 +23,7 @@ public class PlayerData : MonoBehaviour
     public static int MaxExp = 10;
     public static int MaxAmount;
     public static int CurrentAmount;
+    public static int Skill = 0;
 
     public WeaponsDataScriptableObjects[] weapons;
 
@@ -37,14 +38,20 @@ public class PlayerData : MonoBehaviour
     public TextMeshProUGUI LevelText;
     public TextMeshProUGUI ExpText;
     public TextMeshProUGUI AmountText;
+    public TextMeshProUGUI SkillText;
 
-    public Player PlayerScript;
 
     private void Start()
     {
 
-
-        PlayerScript = GetComponent<Player>();
+        MaxHealth = 100;
+        MaxExp = 10;
+        MaxMana = 100;
+        MaxSouls = 5;
+        CurrentExp = 0;
+        CurrentHealth = 100;
+        CurrentMana = 100;
+        CurrentSouls = 0;
     }
 
     public void SetHealth(int health)
@@ -61,6 +68,48 @@ public class PlayerData : MonoBehaviour
     {
         CurrentExp += exp;
     }
+
+    public void UpGradeHealth()
+    {
+        MaxHealth += 1;
+    }
+
+    public void DownGradeHealth()
+    {
+        MaxHealth -= 1;
+    }
+
+    public void UpGradeMana()
+    {
+        MaxMana += 1;
+    }
+
+    public void DownGradeMana()
+    {
+        MaxMana -= 1;
+    }
+
+    public void UpGradeSouls()
+    {
+        MaxSouls += 1;
+    }
+
+    public void DownGradeSouls()
+    {
+        MaxSouls -= 1;
+    }
+
+    public void UpGradeAttack()
+    {
+        AttackStats += 1;
+    }
+
+    public void DownGradeAttack()
+    {
+        AttackStats -= 1;
+    }
+
+
 
     public void UpdateStats()
     {
@@ -87,7 +136,7 @@ public class PlayerData : MonoBehaviour
         SoulsText.text = "Souls : " + CurrentSouls + " / " + MaxSouls.ToString("F0");
         ExpText.text = "Exp : " + CurrentExp + " / " + MaxExp.ToString("F0");
 
-      
+        SkillText.text = "Skill : " + Skill.ToString("F0");
 
     }
 
