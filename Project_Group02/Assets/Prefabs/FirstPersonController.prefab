@@ -2981,10 +2981,6 @@ MonoBehaviour:
   ExpText: {fileID: 0}
   AmountText: {fileID: 0}
   SkillText: {fileID: 0}
-  UpdateHealthText: {fileID: 0}
-  UpdateManaText: {fileID: 0}
-  UpdateAttackText: {fileID: 0}
-  UpdateSoulText: {fileID: 0}
 --- !u!114 &5156997560378298934
 MonoBehaviour:
   m_ObjectHideFlags: 0

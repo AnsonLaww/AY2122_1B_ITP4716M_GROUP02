@@ -24,7 +24,6 @@ public class PlayerData : MonoBehaviour
     public static int MaxAmount;
     public static int CurrentAmount;
     public static int Skill = 0;
-    private int updateSkill = 0;
 
     public WeaponsDataScriptableObjects[] weapons;
 
@@ -40,10 +39,7 @@ public class PlayerData : MonoBehaviour
     public TextMeshProUGUI ExpText;
     public TextMeshProUGUI AmountText;
     public TextMeshProUGUI SkillText;
-    public TextMeshProUGUI UpdateHealthText;
-    public TextMeshProUGUI UpdateManaText;
-    public TextMeshProUGUI UpdateAttackText;
-    public TextMeshProUGUI UpdateSoulText;
+
 
     private void Start()
     {
@@ -56,7 +52,7 @@ public class PlayerData : MonoBehaviour
         CurrentHealth = 100;
         CurrentMana = 100;
         CurrentSouls = 0;
-        updateSkill = 0;
+        Skill = 0;
     }
 
     public void SetHealth(int health)
@@ -76,80 +72,46 @@ public class PlayerData : MonoBehaviour
 
     public void UpGradeHealth()
     {
-        if(Skill <=3 || Skill > 0)
+        if(Skill <=3 && Skill > 0)
         {
             MaxHealth += 1;
-            updateSkill += 1;
+            Skill -= 1;
         }
 
     }
 
-    public void DownGradeHealth()
-    {
-        if (Skill <= 3 || Skill > 0)
-        {
-            MaxHealth -= 1;
-            updateSkill -= 1;
-        }
-
-    }
+  
 
     public void UpGradeMana()
     {
-        if (Skill <= 3 || Skill > 0)
+        if (Skill <= 3 && Skill > 0)
         {
             MaxMana += 1;
-            updateSkill += 1;
+            Skill -= 1;
         }
 
     }
 
-    public void DownGradeMana()
-    {
-        if (Skill <= 3 || Skill > 0)
-        {
-            MaxMana -= 1;
-            updateSkill -= 1;
-        }
 
-    }
 
     public void UpGradeSouls()
     {
-        if (Skill <= 3 || Skill > 0)
+        if (Skill <= 3 && Skill > 0)
         {
             MaxSouls += 1;
-            updateSkill += 1;
+            Skill -= 1;
         }
 
     }
 
-    public void DownGradeSouls()
-    {
-        if (Skill <= 3 || Skill > 0)
-        {
-            MaxSouls -= 1;
-            updateSkill -= 1;
-        }
 
-    }
 
     public void UpGradeAttack()
     {
-        if (Skill <= 3 || Skill > 0)
+        if (Skill <= 3 && Skill > 0)
         {
             AttackStats += 1;
-            updateSkill += 1;
-        }
-
-    }
-
-    public void DownGradeAttack()
-    {
-        if (Skill <= 3 || Skill > 0)
-        {
-            AttackStats -= 1;
-            updateSkill -= 1;
+            Skill -= 1;
         }
 
     }
@@ -182,10 +144,7 @@ public class PlayerData : MonoBehaviour
         ExpText.text = "Exp : " + CurrentExp + " / " + MaxExp.ToString("F0");
 
         SkillText.text = "Skill : " + Skill.ToString("F0");
-        UpdateAttackText.text = updateSkill.ToString("F0");
-        UpdateHealthText.text = updateSkill.ToString("F0");
-        UpdateManaText.text = updateSkill.ToString("F0");
-        UpdateSoulText.text = updateSkill.ToString("F0");
+
 
     }
 
