@@ -41,19 +41,7 @@ public class PlayerData : MonoBehaviour
     public TextMeshProUGUI SkillText;
 
 
-    private void Start()
-    {
 
-        MaxHealth = 100;
-        MaxExp = 10;
-        MaxMana = 100;
-        MaxSouls = 5;
-        CurrentExp = 0;
-        CurrentHealth = 100;
-        CurrentMana = 100;
-        CurrentSouls = 0;
-        Skill = 0;
-    }
 
     public void SetHealth(int health)
     {
