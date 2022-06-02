@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Anubis
   Descriptions: 
   Health: 3000
-  AttackDamage: 20
+  AttackDamage: 5
   Defend: 0
   Experience: 10
