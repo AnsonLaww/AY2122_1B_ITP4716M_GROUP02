@@ -37,7 +37,6 @@ public class PlayerData : MonoBehaviour
     public TextMeshProUGUI SoulsText;
     public TextMeshProUGUI LevelText;
     public TextMeshProUGUI ExpText;
-    public TextMeshProUGUI AmountText;
     public TextMeshProUGUI SkillText;
 
 
@@ -117,9 +116,6 @@ public class PlayerData : MonoBehaviour
             if(i == CurrentWeapons)
             {
                 AttackStats = weapons[i].attack;
-                MaxAmount = weapons[i].MaxAmount;
-                CurrentAmount = weapons[i].Amount;
-                AmountText.text = "Amount : " + CurrentAmount + " / " + MaxAmount.ToString("F0");
 
 
             }

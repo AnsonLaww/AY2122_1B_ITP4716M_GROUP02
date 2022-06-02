@@ -1085,6 +1085,7 @@ MonoBehaviour:
   CrossbowCamara: {fileID: 5156997559821416631}
   PlayerScript: {fileID: 5156997560378298934}
   ExpPrefab: {fileID: 8745441603983185066, guid: 0479ec59b33280b488dca0d48b2223ea, type: 3}
+  ManaBar: {fileID: 0}
   Weapon: {fileID: 11400000, guid: 93e478d4ed37300438beb8daa7556b43, type: 2}
 --- !u!1 &5156997559633759150
 GameObject:
@@ -2877,6 +2878,7 @@ MonoBehaviour:
   Ak47Camara: {fileID: 5156997559572765045}
   PlayerScript: {fileID: 5156997560378298934}
   ExpPrefab: {fileID: 8745441603983185066, guid: 0479ec59b33280b488dca0d48b2223ea, type: 3}
+  ManaBar: {fileID: 0}
   Weapon: {fileID: 11400000, guid: 549b1d1ca80fbe140815986d96735db2, type: 2}
 --- !u!1 &5156997560378298935
 GameObject:
@@ -2979,7 +2981,6 @@ MonoBehaviour:
   SoulsText: {fileID: 0}
   LevelText: {fileID: 0}
   ExpText: {fileID: 0}
-  AmountText: {fileID: 0}
   SkillText: {fileID: 0}
 --- !u!114 &5156997560378298934
 MonoBehaviour:

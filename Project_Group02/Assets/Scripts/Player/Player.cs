@@ -192,11 +192,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void UseMana(int mana)
-    {
-        PlayerData.CurrentMana -= mana;
-        ManaBar.SetMana(PlayerData.CurrentMana);
-    }
+
 
 
     public void LoadScene()

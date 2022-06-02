@@ -10,6 +10,7 @@ public class CrossbowLock : MonoBehaviour
     public Camera CrossbowCamara;
     public Player PlayerScript;
     public GameObject ExpPrefab;
+    public ManaBar ManaBar;
     public WeaponsDataScriptableObjects Weapon;
     bool lockAttack = false;
 
@@ -21,18 +22,17 @@ public class CrossbowLock : MonoBehaviour
     {
         crossbowAnim = GetComponent<Animator>();
         crossbowAnim.SetBool("isLocked", false);
-        Weapon.Amount = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0) && lockAttack == false && Weapon.Amount > 0)
+        if (Input.GetMouseButtonDown(0) && lockAttack == false && PlayerData.CurrentMana > 0)
         {
             Shoot();
+            UseMana(10);
             lockAttack = true;
-            Weapon.Amount -= 1;
             StartCoroutine(LockAttack());
         }
 
@@ -52,6 +52,12 @@ public class CrossbowLock : MonoBehaviour
 
     }
 
+    void UseMana(int mana)
+    {
+        PlayerData.CurrentMana -= mana;
+        ManaBar.SetMana(PlayerData.CurrentMana);
+    }
+
     private void FixedUpdate()
     {
         if (lockAttack)
@@ -69,8 +75,6 @@ public class CrossbowLock : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         FindObjectOfType<AudioManager>().Play("CrossbowReload");
-        Weapon.Amount = 1;
-        Weapon.MaxAmount -= 1;
         lockAttack = false;
 
 

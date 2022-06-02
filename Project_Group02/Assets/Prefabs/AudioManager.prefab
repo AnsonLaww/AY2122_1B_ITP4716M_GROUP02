@@ -76,13 +76,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: AkFire
     clip: {fileID: 8300000, guid: 35d3bd0fa23194343b05b2c33aa64c45, type: 3}
-    volume: 0.31
+    volume: 0.107
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: AkReload
     clip: {fileID: 8300000, guid: 3cecf227804b0a144aa5f192c0532d52, type: 3}
-    volume: 0.3
+    volume: 0.107
     pitch: 1
     loop: 0
     source: {fileID: 0}

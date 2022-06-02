@@ -9,9 +9,10 @@ public class Ak47Lock : MonoBehaviour
     public Camera Ak47Camara;
     public Player PlayerScript;
     public GameObject ExpPrefab;
+    public ManaBar ManaBar;
     public WeaponsDataScriptableObjects Weapon;
     bool canShoot = true;
-
+    int count = 10;
 
 
 
@@ -28,19 +29,21 @@ public class Ak47Lock : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButton(0) && canShoot && Weapon.Amount > 0)
+        if (Input.GetMouseButton(0) && canShoot && count > 0)
         {
             canShoot = false;
             Shoot();
-            Weapon.Amount -= 1;
+            UseMana(1);
+            count -= 1;
+            
             StartCoroutine(ShootGun());
-            if (Weapon.Amount <= 0)
+            if (count <= 0)
             {
                 canShoot = false;
                 StartCoroutine(LockAttack());
             }
 
-            if (Weapon.MaxAmount <= 0)
+            if (PlayerData.CurrentMana <= 0)
             {
                 canShoot = false;
             }
@@ -65,14 +68,19 @@ public class Ak47Lock : MonoBehaviour
 
     }
 
+    void UseMana(int mana)
+    {
+        PlayerData.CurrentMana -= mana;
+        ManaBar.SetMana(PlayerData.CurrentMana);
+    }
+
     IEnumerator LockAttack()
     {
 
 
         FindObjectOfType<AudioManager>().Play("AkReload");
         yield return new WaitForSeconds(3);
-        Weapon.Amount = 40;
-        Weapon.MaxAmount -= 15;
+        count = 10;
         canShoot = true;
 
 
