@@ -67,7 +67,7 @@ public class CrossbowLock : MonoBehaviour
     IEnumerator LockAttack()
     {
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         FindObjectOfType<AudioManager>().Play("CrossbowReload");
         Weapon.Amount = 1;
         Weapon.MaxAmount -= 1;
