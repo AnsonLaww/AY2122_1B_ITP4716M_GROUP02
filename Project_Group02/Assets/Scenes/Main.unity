@@ -9620,6 +9620,55 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 689102182}
+    - target: {fileID: 821941550491381856, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+      propertyPath: Dialogue_1.CharacterName
+      value: ???
+      objectReference: {fileID: 0}
+    - target: {fileID: 821941550491381856, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+      propertyPath: Dialogue_1.Dialogues.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 821941550491381856, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+      propertyPath: Dialogue_1.Dialogues.Array.data[0]
+      value: How well do you know about making mummification?
+      objectReference: {fileID: 0}
+    - target: {fileID: 821941550491381856, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+      propertyPath: Dialogue_1.Dialogues.Array.data[1]
+      value: Ancient Egyptians believed in an afterlife when someone died.  Mummification
+        helped someone reach the afterlife as they believed that an afterlife could
+        only exist if there was a form the ka (soul) could repossess after death.
+        Egyptians believed that the only way to do this was if the body was recognisable.  
+        This is why they spent so long on the process of mummification and why Pharaohs
+        began the building of their tombs during their lifetimes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 821941550491381856, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+      propertyPath: Dialogue_1.Dialogues.Array.data[2]
+      value: The chief embalmer was a priest wearing a mask of Anubis. Anubis was
+        the jackal headed god of the dead. He was closely associated with mummification
+        and embalming, hence priests wore a mask of Anubis.
+      objectReference: {fileID: 0}
+    - target: {fileID: 821941550491381856, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+      propertyPath: Dialogue_1.Dialogues.Array.data[3]
+      value: Firstly, insert a hook through a hole near the nose and pull out part
+        of the brain.      Secondly, make a cut on the left side of the body near
+        the tummy.      Thirdly, remove all internal organs, Fourthly, let the internal
+        organs dry.      Then,  place the lungs, intestines, stomach and liver inside
+        canopic jars,
+      objectReference: {fileID: 0}
+    - target: {fileID: 821941550491381856, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+      propertyPath: Dialogue_1.Dialogues.Array.data[4]
+      value: 'After that, place the heart back inside the body.      Next, rinse
+        inside of body with wine and spices.      Then, cover the corpse with natron
+        (salt) for 70 days.     Afterwards, after 40 days stuff the body with linen
+        or sand to give it a more human shape.      Then, after the 70 days wrap
+        the body from head to toe in bandages.      Finally, place in a sarcophagus
+        (a type of box like a coffin).  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 821941550491381856, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
+      propertyPath: Dialogue_1.Dialogues.Array.data[5]
+      value: If the person had been a Pharaoh, he would be placed inside a special
+        burial chamber with lots of treasure.
+      objectReference: {fileID: 0}
     - target: {fileID: 1219574181062585071, guid: 820ee9d03e296394e9a4618783f15c13, type: 3}
       propertyPath: PlayerOBJ
       value: 
