@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
+    Collider hitCollider;
     Animator swordAnim;
     public WeaponsDataScriptableObjects Weapon;
     bool isAttacked;
@@ -15,8 +16,8 @@ public class Sword : MonoBehaviour
     {
         swordAnim = GetComponent<Animator>();
         swordAnim.SetTrigger("change");
-
-
+        hitCollider = GetComponent<BoxCollider>();
+        hitCollider.enabled = false;
         isAttacked = false;
     }
 
@@ -30,6 +31,8 @@ public class Sword : MonoBehaviour
         {
             swordAnim.SetBool("isAttacked", true);
             isAttacked = true;
+            hitCollider.enabled = true;
+            Invoke("EnableHitBlock", 0.5f);
         }
         if(Input.GetMouseButtonUp(0) && isAttacked == true)
         {
@@ -40,6 +43,10 @@ public class Sword : MonoBehaviour
 
     }
 
+    private void EnableHitBlock()
+    {
+        hitCollider.enabled = false;
+    }
 
 
 
@@ -48,6 +55,7 @@ public class Sword : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             other.gameObject.GetComponent<EnemiesData>().SetHealth(other.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
+            other.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 50f, ForceMode.Impulse);
             if (other.transform.gameObject.GetComponent<BossMovement>())
             {
                 other.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");

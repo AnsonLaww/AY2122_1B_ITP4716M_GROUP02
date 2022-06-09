@@ -27,7 +27,6 @@ public class CrossbowLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetMouseButtonDown(0) && lockAttack == false && PlayerData.CurrentMana > 0)
         {
             Shoot();

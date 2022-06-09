@@ -13,7 +13,7 @@ public class Ak47Lock : MonoBehaviour
     public WeaponsDataScriptableObjects Weapon;
     bool canShoot = true;
     int count = 10;
-
+    bool isFired = false;
 
 
 
@@ -28,6 +28,7 @@ public class Ak47Lock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 
         if (Input.GetMouseButton(0) && canShoot && count > 0)
         {
@@ -91,21 +92,22 @@ public class Ak47Lock : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.1f);
+        Ak47Anim.SetBool("isFired", false);
         canShoot = true;
         FindObjectOfType<AudioManager>().Play("AkFire");
     }
 
 
     void Shoot()
-    {
-        transform.position -= Vector3.forward * 0.1f;
+    { 
         RaycastHit hit;
-
+        Ak47Anim.SetBool("isFired", true);
         if (Physics.Raycast(Ak47Camara.transform.position, Ak47Camara.transform.forward, out hit, range) && hit.collider.tag == "Monster")
         {
             Debug.DrawLine(Ak47Camara.transform.position, hit.transform.position, Color.red, 0.5f, true);
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
             Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
+            hit.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100f, ForceMode.Impulse);
             if (hit.transform.gameObject.GetComponent<BossMovement>())
             {
                 hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");

@@ -154,6 +154,7 @@ public class Player : MonoBehaviour
             Ak47.SetActive(false);
             Sword.SetActive(true);
             isSword = true;
+            Sword.GetComponent<Animator>().SetTrigger("change");
             data.CurrentWeapons = 2;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3) && isSword == true)
