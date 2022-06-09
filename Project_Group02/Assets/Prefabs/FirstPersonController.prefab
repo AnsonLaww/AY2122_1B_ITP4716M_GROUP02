@@ -906,7 +906,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7a05b051a870b2a4a8bee8ee011ba69f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1087,6 +1087,7 @@ MonoBehaviour:
   ExpPrefab: {fileID: 8745441603983185066, guid: 0479ec59b33280b488dca0d48b2223ea, type: 3}
   ManaBar: {fileID: 0}
   Weapon: {fileID: 11400000, guid: 93e478d4ed37300438beb8daa7556b43, type: 2}
+  Force: 100
 --- !u!1 &5156997559633759150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,7 +2066,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7a05b051a870b2a4a8bee8ee011ba69f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2557,7 +2558,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7a05b051a870b2a4a8bee8ee011ba69f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2880,6 +2881,8 @@ MonoBehaviour:
   ExpPrefab: {fileID: 8745441603983185066, guid: 0479ec59b33280b488dca0d48b2223ea, type: 3}
   ManaBar: {fileID: 0}
   Weapon: {fileID: 11400000, guid: 549b1d1ca80fbe140815986d96735db2, type: 2}
+  Force: 100
+  KnockTime: 0.2
 --- !u!1 &5156997560378298935
 GameObject:
   m_ObjectHideFlags: 0
@@ -4617,8 +4620,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64063b6787ecdca48b848e38d395ce84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ManaBar: {fileID: 0}
   Weapon: {fileID: 11400000, guid: db0842ba6c0bf9c4a828ed7d790bdc4c, type: 2}
   ExpPrefab: {fileID: 8745441603983185066, guid: 0479ec59b33280b488dca0d48b2223ea, type: 3}
+  Force: 100
 --- !u!65 &1913351487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4630,8 +4635,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.301788, y: 1.0838255, z: 2.1622546}
-  m_Center: {x: 0.31984898, y: -0.018411387, z: 0.32005954}
+  m_Size: {x: 3.4043176, y: 1.0838255, z: 2.5641482}
+  m_Center: {x: 1.0554346, y: -0.1043428, z: -0.07883448}
 --- !u!95 &1913351486
 Animator:
   serializedVersion: 3

@@ -11,9 +11,12 @@ public class Ak47Lock : MonoBehaviour
     public GameObject ExpPrefab;
     public ManaBar ManaBar;
     public WeaponsDataScriptableObjects Weapon;
+    public float Force;
+    public float KnockTime;
     bool canShoot = true;
     int count = 10;
     bool isFired = false;
+    
 
 
 
@@ -107,7 +110,8 @@ public class Ak47Lock : MonoBehaviour
             Debug.DrawLine(Ak47Camara.transform.position, hit.transform.position, Color.red, 0.5f, true);
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
             Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
-            hit.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+            hit.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * Force, ForceMode.Impulse);
+
             if (hit.transform.gameObject.GetComponent<BossMovement>())
             {
                 hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
@@ -124,4 +128,6 @@ public class Ak47Lock : MonoBehaviour
             }
         }
     }
+
+
 }

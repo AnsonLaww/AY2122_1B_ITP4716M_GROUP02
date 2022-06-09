@@ -6,9 +6,11 @@ public class Sword : MonoBehaviour
 {
     Collider hitCollider;
     Animator swordAnim;
+    public ManaBar ManaBar;
     public WeaponsDataScriptableObjects Weapon;
     bool isAttacked;
     public GameObject ExpPrefab;
+    public float Force;
 
 
     // Start is called before the first frame update
@@ -55,7 +57,7 @@ public class Sword : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             other.gameObject.GetComponent<EnemiesData>().SetHealth(other.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
-            other.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10f, ForceMode.Impulse);
+            other.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * Force, ForceMode.Impulse);
             if (other.transform.gameObject.GetComponent<BossMovement>())
             {
                 other.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
@@ -64,8 +66,7 @@ public class Sword : MonoBehaviour
 
             if (other.transform.gameObject.GetComponent<EnemiesData>().GetHealth() <= 0)
             {
-                Instantiate(ExpPrefab, other.transform.position, Quaternion.identity);
-                Exp.exp = other.transform.gameObject.GetComponent<EnemiesData>().GetExp();
+                ManaBar.SetMana(PlayerData.CurrentMana + 10);
                 Destroy(other.transform.gameObject);
             }
 
