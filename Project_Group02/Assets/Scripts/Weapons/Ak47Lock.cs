@@ -107,7 +107,7 @@ public class Ak47Lock : MonoBehaviour
             Debug.DrawLine(Ak47Camara.transform.position, hit.transform.position, Color.red, 0.5f, true);
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
             Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
-            hit.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100f, ForceMode.Impulse);
+            hit.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10f, ForceMode.Impulse);
             if (hit.transform.gameObject.GetComponent<BossMovement>())
             {
                 hit.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");

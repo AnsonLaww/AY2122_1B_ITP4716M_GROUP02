@@ -90,6 +90,7 @@ public class CrossbowLock : MonoBehaviour
         {
             Debug.DrawLine(CrossbowCamara.transform.position, hit.transform.position, Color.red, 0.5f, true);
             hit.transform.gameObject.GetComponent<EnemiesData>().SetHealth(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
+            hit.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 50f, ForceMode.Impulse);
             Debug.Log(hit.transform.gameObject.GetComponent<EnemiesData>().GetHealth());
             if (hit.transform.gameObject.GetComponent<BossMovement>())
             {

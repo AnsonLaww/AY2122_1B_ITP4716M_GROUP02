@@ -55,7 +55,7 @@ public class Sword : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             other.gameObject.GetComponent<EnemiesData>().SetHealth(other.gameObject.GetComponent<EnemiesData>().GetHealth() - Weapon.attack);
-            other.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 50f, ForceMode.Impulse);
+            other.transform.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10f, ForceMode.Impulse);
             if (other.transform.gameObject.GetComponent<BossMovement>())
             {
                 other.transform.gameObject.GetComponent<BossMovement>().GetComponent<Animator>().SetTrigger("hurt");
