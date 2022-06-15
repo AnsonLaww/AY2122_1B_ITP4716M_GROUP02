@@ -24,6 +24,7 @@ public class PlayerData : MonoBehaviour
     public static int MaxAmount;
     public static int CurrentAmount;
     public static int Skill = 0;
+    public static int Key = 0;
 
     public WeaponsDataScriptableObjects[] weapons;
 
@@ -67,6 +68,10 @@ public class PlayerData : MonoBehaviour
 
     }
 
+    public int GetKey()
+    {
+        return Key;
+    }
   
 
     public void UpGradeMana()

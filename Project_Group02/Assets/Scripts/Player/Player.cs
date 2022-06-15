@@ -210,7 +210,22 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Finish")
         {
-            SceneManager.LoadScene("BossScene");
+            if(PlayerData.Key == 0)
+            {
+
+            }
+
+            if (PlayerData.Key == 1)
+            {
+
+            }
+
+            if (PlayerData.Key == 2)
+            {
+
+                SceneManager.LoadScene("BossScene");
+            }
+
         }
 
 
