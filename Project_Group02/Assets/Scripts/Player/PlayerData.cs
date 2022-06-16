@@ -11,6 +11,7 @@ public class PlayerData : MonoBehaviour
 
     public int DialogueNumber;
 
+
     public static int MaxHealth = 100;
     public static int CurrentHealth = 100;
     public static int MaxMana = 100;
@@ -39,7 +40,6 @@ public class PlayerData : MonoBehaviour
     public TextMeshProUGUI LevelText;
     public TextMeshProUGUI ExpText;
     public TextMeshProUGUI SkillText;
-
 
 
 
